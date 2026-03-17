@@ -1,0 +1,13 @@
+
+
+.card {
+  Padding: 20px;
+  box-shadow: 1px 1px 4px #000;
+  background: grey
+}
+
+
+.data-container{
+  display: flex;
+  gap: 1rem;
+}

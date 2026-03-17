@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Logowania</title>
+    <style>
+        .error {
+            border: 2px solid red;
+            background-color: #fee;
+        }
+        .error-msg {
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
+        #output-container {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Zaloguj się do systemu</h1>
+        
+        <p id="error-message" class="error-msg" aria-live="polite">Brak loginu lub hasła!</p>
+
+        <form id="loginForm">
+            <div>
+                <label for="login">Login:</label>
+                <input type="text" id="login" placeholder="Podaj login">
+            </div>
+            <br>
+            <div>
+                <label for="pwd">Hasło:</label>
+                <input type="password" id="pwd" placeholder="Podaj hasło">
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" id="rm">
+                <label for="rm">Zapamiętaj dane na tym urządzeniu</label>
+            </div>
+            <br>
+            <button type="button" onclick="loginUser()">Zaloguj</button>
+        </form>
+
+        <div id="output-container" aria-live="polite"></div>
+    </main>
+
+    <script>
+        function loginUser() {
+            // Pobieranie elementów
+            let login = document.getElementById('login');
+            let pwd = document.getElementById('pwd');
+            let rm = document.getElementById('rm');
+            let errorMsg = document.getElementById('error-message');
+            let outputContainer = document.getElementById('output-container');
+
+            // Czyszczenie poprzednich komunikatów i stylów przed nową walidacją
+            login.classList.remove('error');
+            login.removeAttribute('aria-invalid');
+            pwd.classList.remove('error');
+            pwd.removeAttribute('aria-invalid');
+            errorMsg.style.display = 'none';
+            outputContainer.innerHTML = ''; 
+
+            // Walidacja pustych pól
+            if (!login.value || !pwd.value) {
+                console.error("Brak loginu lub hasła");
+                errorMsg.style.display = 'block';
+
+                if (!login.value) {
+                    login.classList.add('error');
+                    login.setAttribute('aria-invalid', 'true');
+                }
+                if (!pwd.value) {
+                    pwd.classList.add('error');
+                    pwd.setAttribute('aria-invalid', 'true');
+                }
+                return; // Przerwanie funkcji
+            }
+
+            // Sprawdzenie poprawności danych
+            if (login.value === "Admin" && pwd.value === "admin123") {
+                let out = document.createElement("p");
+                let status = rm.checked ? "TAK" : "NIE";
+                let content = document.createTextNode("Witaj! Czy zapamiętać dane? " + status);
+
+                out.appendChild(content);
+                out.id = "output";
+                out.style.color = "green";
+                outputContainer.appendChild(out);
+            } else {
+                let out = document.createElement("p");
+                out.textContent = "Błędny login lub hasło.";
+                out.style.color = "red";
+                outputContainer.appendChild(out);
+            }
+        }
+    </script>
+</body>
+</html>

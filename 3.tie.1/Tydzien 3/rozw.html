@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <style>
+        /* Tylko jedna prosta klasa do błędów */
+        .blad {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rejestracja uzytkownika</h1>
+    
+    <form>
+        <label for="login">Login:</label>
+        <input type="text" id="login"><br><br>
+
+        <label for="haslo1">Hasło:</label>
+        <input type="password" id="haslo1"><br><br>
+
+        <label for="haslo2">Powtórz hasło:</label>
+        <input type="password" id="haslo2"><br><br>
+
+        <label for="wiek">Twój wiek:</label>
+        <input type="number" id="wiek"><br><br>
+
+        <input type="checkbox" id="regulamin" onchange="odblokuj()">
+        <label for="regulamin">Akceptuję Regulamin</label><br><br>
+
+        <button type="button" id="przycisk" onclick="rejestruj()" disabled>Zarejestruj</button>
+    </form>
+
+    <br>
+    <div id="komunikaty" aria-live="polite"></div>
+
+    <script>
+        // Funkcja aktywująca przycisk
+        function odblokuj() {
+            let reg = document.getElementById('regulamin');
+            let btn = document.getElementById('przycisk');
+            
+            if (reg.checked == true) {
+                btn.disabled = false;
+            } else {
+                btn.disabled = true;
+            }
+        }
+
+        // Główna funkcja walidująca
+        function rejestruj() {
+            let login = document.getElementById('login');
+            let haslo1 = document.getElementById('haslo1');
+            let haslo2 = document.getElementById('haslo2');
+            let wiekInput = document.getElementById('wiek');
+            let kom = document.getElementById('komunikaty');
+
+            // 1. Czyszczenie starych błędów przed nowym sprawdzeniem
+            haslo1.classList.remove('blad');
+            haslo1.removeAttribute('aria-invalid');
+            haslo2.classList.remove('blad');
+            haslo2.removeAttribute('aria-invalid');
+            wiekInput.classList.remove('blad');
+            wiekInput.removeAttribute('aria-invalid');
+            
+            let czyJestBlad = false;
+            let tekstBledu = "";
+
+            // 2. Sprawdzanie czy hasła są identyczne
+            if (haslo1.value != haslo2.value) {
+                tekstBledu += "Podane hasła się różnią!<br>";
+                czyJestBlad = true;
+                
+                haslo1.classList.add('blad');
+                haslo1.setAttribute('aria-invalid', 'true');
+                haslo2.classList.add('blad');
+                haslo2.setAttribute('aria-invalid', 'true');
+            }
+
+            // 3. Sprawdzanie wieku
+            let wiek = parseInt(wiekInput.value);
+            if (isNaN(wiek) || wiek < 18) {
+                tekstBledu += "Musisz mieć ukończone 18 lat!<br>";
+                czyJestBlad = true;
+                
+                wiekInput.classList.add('blad');
+                wiekInput.setAttribute('aria-invalid', 'true');
+            }
+
+            // 4. Wyświetlanie wyniku
+            if (czyJestBlad == true) {
+                kom.style.color = "red";
+                kom.innerHTML = tekstBledu;
+            } else {
+                kom.style.color = "green";
+                kom.innerHTML = "Rejestracja udana! Witaj " + login.value;
+            }
+        }
+    </script>
+</body>
+</html>

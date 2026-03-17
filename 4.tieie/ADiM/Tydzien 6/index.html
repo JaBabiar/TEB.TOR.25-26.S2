@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #kostka{
+            box-sizing: border-box;
+            box-shadow: 0px 0px 30px #D3D3D3;
+            width: 200px;
+            height: 200px;
+            border-radius: 10%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="kostka">   
+    </div>
+</body>
+</html>
+<script>
+    Math.random()
+
+// <0;1> * (20 - 5) + 1
+    random = (Math.random() * (6- 1) + 1)
+
+
+    let kostka = document.getElementById("kostka")
+    kostka.innerHTML = `
+    <p> 
+       ${Math.round(random)} 
+    </p>
+    `
+
+    kostka.addEventListener
+</script>
+
+

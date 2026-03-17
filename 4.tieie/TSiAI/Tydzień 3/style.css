@@ -1,0 +1,57 @@
+/* 
+1. zmiana div na znacznik semantyczne ( section, main, nav, header )
+2. style dla: 
+    - Bloku nagłówka ( tło czerwone, tekst cyan)
+    - blok nawigacyjny ( wycentrowanie tekstu, kolor linków czarny) 
+    - blok lewy ( kolor tła magenta, szerokość 25%, wysokość 500px ) 
+    - blok srodkowy ( kolor tła róż, szerokość 55%, wysokość 500px ) 
+    - blok prawy ( kolor tła biały, szerokość 20%, wysokość 500px ) 
+    - blok stopki ( wysokość 50px, kolor tła deepskyblue )
+    - bloki mają być ustawione obok siebie
+*/
+header{
+    background: red;
+    color: cyan;
+}
+nav{
+    text-align: center;
+}
+a{
+    color: black;
+}
+main{
+    display: flow-root;
+}
+.lewo, .srodek, .prawo{
+    height: 500px;
+    float: left;
+}
+.lewo{
+    background-color: magenta;
+    width: 25%;
+}
+.srodek{
+    background: pink;
+    width: 55%;
+}
+.prawo{
+    background: whitesmoke;
+    width: 20%;
+}
+
+.cien{
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background-color: blue;
+    border-radius: 26px;
+    transition: all 50s ease-in-out;
+}
+.cien:hover{
+    transform: rotate(360000deg);
+}
+
+input:focus{
+    background-color: yellow;
+    padding: 10px;
+}

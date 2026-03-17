@@ -1,0 +1,33 @@
+header{
+    width: 100%;
+    height: 100px;
+    background: brown;
+}
+main{
+    height: 500px;
+    width: 100%;
+    display: flow-root;
+    background-color: burlywood;
+}
+
+section{
+    float:left;
+    background-color: azure;
+}
+.l{
+    width: 70%;
+    height: 500px;
+}
+.l img{
+    width: 30%;
+    height: 150px;
+    margin: 7px;
+}
+.p{
+    width: 30%;
+    height: 500px;
+}
+
+footer{
+    background-color: brown;
+}

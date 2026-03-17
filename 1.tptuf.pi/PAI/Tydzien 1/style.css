@@ -1,0 +1,25 @@
+.edu-wrapper{
+    display: flow-root;
+    padding: 0px 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+.edu-wrapper h2{
+    text-align: center;
+}
+.border-card{
+    float: left;
+    border: 2px solid black;
+    margin-right: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 250px;
+}
+figure{
+    overflow: hidden;
+    margin: 0;
+}
+figure img{
+    min-width: 100%;
+    min-height: 100%;
+}

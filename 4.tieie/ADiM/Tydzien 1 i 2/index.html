@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka Publiczna</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h2>Miejska Biblioteka Publiczna w Książkowicach</h2>
+    </header>
+    <main>
+        <section class="lewy">
+            <h2>Dodaj czytelnika</h2>
+            <label for="imie">imię</label>
+            <input type="text" id="imie" name="imie"> </br>
+            <label for="nazwisko">nazwisko</label>
+            <input type="text" name="nazwisko" id="nazwisko"> </br>
+            <label for="wiek">rok urodzenia</label>
+            <input type="number" name="wiek" id="wiek">
+            </br>
+            <button onclick="skrypt1()">Dodaj</button>
+            <span id="out">
+            </span>
+        </section>
+        <section class="srodkowy">
+            <img src="./biblioteka.png" alt="biblioteka">
+            <h4>ul. Czytelnicza 25 12-120 Książkowice tel.: 123123123 e-mail: biuro@bib.pl</h4>
+        </section>
+        <section class="prawy">
+            <h3>Nasi czytelnicy:</h3>
+            <ul id="listaCzytelnikow">
+            </ul>
+        </section>
+    </main>
+    <section>
+        <article class="flex">
+            <div></div>
+            <div></div>
+            <div></div>
+        </article>
+        <article class="flow">
+            <div></div>
+            <div></div>
+            <div></div>
+        </article>
+    </section>
+
+
+
+
+    <footer>
+        <p>autor: 1293912931293</p>
+    </footer>
+</body>
+
+</html>
+<script src="./app.js" type="text/javascript"></script>

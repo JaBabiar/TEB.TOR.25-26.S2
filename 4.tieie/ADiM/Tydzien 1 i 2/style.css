@@ -1,0 +1,39 @@
+main{
+    display: flow-root;
+}
+main section{
+    float: left;
+}
+.lewy, .prawy, .srodkowy{
+    height: 500px;
+}
+.lewy{
+    width: 25%;
+    background: rebeccapurple;
+}
+.prawy{
+    width: 15%;
+    background: cadetblue;
+}
+.srodkowy{
+    width: 60%;
+    background: chocolate;
+}
+
+.flex{
+    display: flex;
+    justify-content: end;
+}
+article div{
+    min-width: 250px;
+    max-width: 400px;
+    margin: 16px;
+    height: 300px;
+    background-color: red;
+}
+.flow{
+    display: flow-root;
+}
+.flow div{
+    float:left;
+}

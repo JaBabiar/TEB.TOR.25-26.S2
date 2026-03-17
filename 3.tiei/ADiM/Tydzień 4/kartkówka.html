@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARTKÓWKA PRAKTYCZNA - 3TI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+        body { 
+            font-family: 'Space Mono', monospace; 
+            background-color: #e5e7eb;
+            background-image: radial-gradient(#000 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .neo-brutal {
+            box-shadow: 10px 10px 0px 0px #000;
+            border: 4px solid #000;
+        }
+        .neo-brutal-sm {
+            box-shadow: 5px 5px 0px 0px #000;
+            border: 3px solid #000;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <div class="max-w-5xl mx-auto space-y-10">
+        
+        <header class="bg-[#FF3366] p-6 neo-brutal flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl font-black text-white uppercase tracking-tighter">KARTKÓWKA PRAKTYCZNA</h1>
+                <p class="text-black font-bold mt-2 bg-white inline-block px-3 py-1 border-2 border-black">TEMAT: HTML5 / CSS / ŚCIEŻKI</p>
+            </div>
+            <div class="bg-[#00FF99] p-4 neo-brutal-sm text-black font-bold">
+                KLASA: 3 TECHNIK INFORMATYK
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            <section class="bg-[#33CCFF] p-6 neo-brutal flex flex-col">
+                <h2 class="text-xl font-bold bg-black text-white px-4 py-1 self-start mb-6 uppercase">ZADANIE 1: Ścieżki [3 pkt]</h2>
+                
+                <p class="font-bold mb-4 italic">Na podstawie poniższego drzewa folderów, zapisz w pliku <u>index.html</u> poprawne odnośniki:</p>
+                
+                <div class="bg-white p-4 border-4 border-black mb-6 font-bold text-sm">
+                    <pre>
+FOLDER_PROJEKTU/
+├── dokumenty/
+│   └── regulamin.pdf
+├── obrazy/
+│   └── logo.png
+└── kod/
+    └── html/
+        └── <b>index.html</b> (TU PRACUJESZ)
+                    </pre>
+                </div>
+
+                <ul class="space-y-3 font-bold text-sm">
+                    <li class="flex items-center gap-2"><span class="bg-black text-white px-2">1</span> Link do pliku regulamin.pdf</li>
+                    <li class="flex items-center gap-2"><span class="bg-black text-white px-2">2</span> Wyświetlenie obrazka logo.png</li>
+                    <li class="flex items-center gap-2"><span class="bg-black text-white px-2">3</span> Numer telefonu: +48 111 222 333</li>
+                </ul>
+            </section>
+
+            <section class="bg-[#FFD700] p-6 neo-brutal">
+                <h2 class="text-xl font-bold bg-black text-white px-4 py-1 self-start mb-6 uppercase">ZADANIE 2: Semantyka [4 pkt]</h2>
+                <p class="font-bold text-sm mb-6">Odwzoruj strukturę strony używając wyłącznie tagów semantycznych (header, nav, main, section, aside, footer). <span class="underline">Zakaz używania DIV-ów!</span></p>
+                
+                <div class="flex flex-col gap-2 border-4 border-black p-3 bg-white">
+                    <div class="border-2 border-black h-10 bg-[#FF3366] flex items-center justify-center font-bold text-xxs">
+                        GÓRA STRONY (Nagłówek)
+                        szer: 100% wys: 125px
+                    </div>
+                    <div class="border-2 border-black h-6 bg-white mx-4 flex items-center justify-center font-bold text-[10px]">NAWIGACJA</div>
+                    <div class="flex gap-2 h-32">
+                        <div class="flex-[3] border-2 border-black bg-[#33CCFF] flex flex-col p-2 gap-2 text-center font-bold text-xs uppercase">
+                            Treść Główna
+                            <div class="border-2 border-black bg-white flex-1 flex items-center justify-center">Sekcja 1</div>
+                            <div class="border-2 border-black bg-white flex-1 flex items-center justify-center">Sekcja 2</div>
+                        </div>
+                        <div class="flex-1 border-2 border-black bg-black text-white flex items-center justify-center text-[10px] font-bold text-center p-1">PANEL BOCZNY</div>
+                    </div>
+                    <div class="border-2 border-black h-8 bg-black text-white flex items-center justify-center text-xs">STOPKA</div>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="bg-white p-6 neo-brutal">
+            <h2 class="text-xl font-bold bg-black text-white px-4 py-1 self-start mb-6 uppercase">ZADANIE 3: Tabele i CSS [3 pkt]</h2>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="w-full md:w-1/2 space-y-4">
+                    <p class="font-bold underline decoration-4 underline-offset-4">WYMAGANIA CSS:</p>
+                    <ul class="font-bold text-sm space-y-2 list-none">
+                        <li>> Zapadanie się obramowania </li>
+                        <li>> Obramowanie 2px </li>
+                    </ul>
+                    <p class="bg-yellow-200 p-2 border-2 border-black text-xs font-bold">Zadanie: Utwórz tabelkę zgodnie ze schematem</p>
+                </div>
+
+                <div class="w-full md:w-1/2 overflow-x-auto border-4 border-black p-2 bg-slate-100">
+                    <div class="grid grid-cols-4 grid-rows-3 w-[400px] gap-1 bg-black border-2 border-black">
+                        <div class="bg-[#FF3366] col-span-4 h-12 flex items-center justify-center font-bold text-white border-2 border-black">GŁÓWNY NAGŁÓWEK (th)</div>
+                        <div class="bg-white row-span-2 flex items-center justify-center font-bold text-xs border-2 border-black p-2 text-center uppercase">Łączenie wierszy</div>
+                        <div class="bg-[#33CCFF] col-span-2 flex items-center justify-center font-bold text-xs border-2 border-black">Łączenie 2 kolumn</div>
+                        <div class="bg-white row-span-2 flex items-center justify-center font-bold text-xs border-2 border-black p-2 text-center uppercase italic">Łączenie wierszy</div>
+                        <div class="bg-white flex items-center justify-center font-bold text-xs border-2 border-black h-12 uppercase">Komórka A</div>
+                        <div class="bg-white flex items-center justify-center font-bold text-xs border-2 border-black h-12 uppercase">Komórka B</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

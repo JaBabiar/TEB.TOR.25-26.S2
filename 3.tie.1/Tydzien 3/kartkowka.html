@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartkówka: HTML5, Ścieżki, Tabele</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { text-align: center; color: #2c3e50; }
+        .instruction {
+            background-color: #e8f4fd;
+            border-left: 5px solid #2980b9;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .task-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .task-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            color: #c0392b;
+        }
+        code {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            display: block;
+            margin-top: 5px;
+            white-space: pre-wrap;
+        }
+        /* Stylizacja komentarzy, aby były widoczne w przeglądarce jako zadania */
+        .question-highlight {
+            color: #d35400;
+            font-weight: bold;
+            font-style: italic;
+            background-color: #fff3e0;
+            padding: 2px 5px;
+            border: 1px dashed #d35400;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kartkówka Praktyczna: HTML5 & Struktura</h1>
+    <div class="instruction">
+        <strong>Czas:</strong> 15-20 minut<br>
+        <strong>Zadanie:</strong> Uzupełnij brakujące fragmenty kodu w miejscach oznaczonych komentarzami HTML <code>&lt;!-- ... --&gt;</code>.
+        Wpisz odpowiedni kod bezpośrednio w pliku źródłowym.
+    </div>
+
+    <!-- =======================================================================
+    ZADANIE 1: LOGIKA ŚCIEŻEK (5 pkt)
+    
+    Załóż następującą strukturę folderów na serwerze:
+    / (główny katalog strony)
+    ├── index.html
+    ├── css/
+    │   └── style.css
+    ├── img/
+    │   └── logo.png
+    └── podstrony/
+        └── kontakt.html
+
+    Twoim zadaniem jest poprawne uzupełnienie atrybutów href i src w poniższym kodzie,
+    zakładając, że edytujesz plik PODSTRONY/kontakt.html.
+    ======================================================================== -->
+
+    <div class="task-box">
+        <span class="task-title">Zadanie 1: Ścieżki (edytujesz plik: podstrony/kontakt.html)</span>
+        
+        <!-- 1.1. Chcesz załączyć arkusz stylów, który znajduje się w folderze css w głównym katalogu. 
+             Użyj ścieżki względnej wychodzącej "w górę". -->
+        <link rel="stylesheet" href="<!-- WPISZ ŚCIEŻKĘ DO style.css -->">
+
+        <br>
+
+        <!-- 1.2. Chcesz wyświetlić logo, które znajduje się w folderze img w głównym katalogu. 
+             Użyj ścieżki względnej. -->
+        <img src="<!-- WPISZ ŚCIEŻKĘ DO logo.png -->" alt="Logo firmy">
+
+        <br>
+
+        <!-- 1.3. Chcesz stworzyć link powrotny do strony głównej (index.html). 
+             Użyj ścieżki ABSOLUTNEJ (zakładając, że / to główny katalog domeny). -->
+        <a href="<!-- WPISZ ŚCIEŻKĘ ABSOLUTNĄ DO index.html -->">Strona Główna</a>
+    </div>
+
+
+    <!-- =======================================================================
+    ZADANIE 2: SEMANTYKA HTML5 (8 pkt)
+    
+    Poniżej znajduje się szkielet strony typu "Blog". 
+    Zamiast używać znaczników <div>, dobierz odpowiednie znaczniki semantyczne HTML5 
+    zgodnie z opisem w komentarzach.
+    ======================================================================== -->
+
+    <div class="task-box">
+        <span class="task-title">Zadanie 2: Semantyka</span>
+
+        <!-- 2.1. Nagłówek strony zawierający logo i tytuł -->
+        <<!-- WPISZ ZNACZNIK: header --> class="site-header">
+            <h1>Moje Podróże</h1>
+        </header>
+
+        <!-- 2.2. Główna nawigacja strony (menu) -->
+        <nav>
+            <ul>
+                <li><a href="#">Start</a></li>
+                <li><a href="#">O mnie</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2.3. Główna zawartość strony (unikalna dla tej podstrony) -->
+        <<!-- WPISZ ZNACZNIK: main --> class="content">
+            
+            <article>
+                <h2>Wyprawa w góry</h2>
+                <p>Tekst artykułu...</p>
+                
+                <!-- 2.4. Zdjęcie z podpisem (użyj odpowiedniego znacznika grupującego) -->
+                <<!-- WPISZ ZNACZNIK: figure -->>
+                    <img src="gory.jpg" alt="Szczyt">
+                    <!-- 2.5. Podpis pod zdjęciem -->
+                    <<!-- WPISZ ZNACZNIK: figcaption -->>Widok z Rysów</figcaption>
+                </figure>
+            </article>
+
+        </main>
+
+        <!-- 2.6. Blok boczny (np. reklama, ostatnie wpisy) niezwiązany bezpośrednio z treścią główną -->
+        <<!-- WPISZ ZNACZNIK: aside --> class="sidebar">
+            <h3>Reklama</h3>
+            <p>Kup plecak turystyczny!</p>
+        </aside>
+
+        <!-- 2.7. Stopka strony (prawa autorskie, kontakt) -->
+        <footer>
+            &copy; 2023 Moje Podróże
+        </footer>
+    </div>
+
+
+    <!-- =======================================================================
+    ZADANIE 3: TABELE DANYCH (7 pkt)
+    
+    Stwórz tabelę przedstawiającą "Plan Dnia". 
+    Tabela musi posiadać obramowanie (może być atrybut border lub CSS).
+    Uwaga na scalanie komórek!
+    ======================================================================== -->
+
+    <div class="task-box">
+        <span class="task-title">Zadanie 3: Tabele</span>
+        
+        <!-- 3.1. Utwórz tabelę z obramowaniem (np. border="1") -->
+        <table <!-- WPISZ ATRYBUT OBRAMOWANIA --> style="border-collapse: collapse; width: 100%;">
+            
+            <thead>
+                <tr>
+                    <!-- 3.2. Nagłówek tabeli "Plan Dnia" ma rozciągać się na 3 kolumny -->
+                    <th <!-- WPISZ ATRYBUT SCALANIA POZIOMEGO --> >Plan Dnia</th>
+                </tr>
+                <tr>
+                    <th>Dzień</th>
+                    <th>Godzina</th>
+                    <th>Zajęcia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- 3.3. Komórka "Poniedziałek" ma rozciągać się na 2 wiersze (dwa zajęcia w ten dzień) -->
+                    <td <!-- WPISZ ATRYBUT SCALANIA PIONOWEGO --> >Poniedziałek</td>
+                    <td>08:00</td>
+                    <td>Matematyka</td>
+                </tr>
+                <tr>
+                    <!-- Tutaj nie wpisujemy "Poniedziałek", bo jest scalone wyżej -->
+                    <td>09:00</td>
+                    <td>Informatyka</td>
+                </tr>
+                <tr>
+                    <td>Wtorek</td>
+                    <!-- 3.4. We wtorek mamy dwa zajęcia jednocześnie (laboratoria), więc scalamy 2 kolumny -->
+                    <td <!-- WPISZ ATRYBUT SCALANIA POZIOMEGO --> >10:00 - Laboratoria (Sala 101 i 102)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
