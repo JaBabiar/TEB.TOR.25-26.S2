@@ -1,0 +1,12 @@
+*{
+    font-family: Georgia;
+}
+body{
+    text-align: center;
+}
+
+header{
+    padding: 30px;
+    /* linear-gradient(0-360deg, kolor początkowy, kolor końcowy) */
+    background:linear-gradient(#A0522D,#F5DEB3 );
+}
