@@ -1,0 +1,27 @@
+header{
+    height: 100px;
+    background-color: crimson ;
+}
+
+
+main{
+    display: flex
+}
+
+section{
+    width: 33.3%;
+    height: 300px;
+    background: red;
+    color: yellow;
+}
+
+.yellow-bg{
+    color: red;
+    background-color: yellow;
+}
+
+
+footer{
+    height: 75px;
+        background-color: crimson ;
+}

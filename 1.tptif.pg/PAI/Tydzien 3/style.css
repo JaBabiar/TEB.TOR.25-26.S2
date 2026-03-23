@@ -1,0 +1,52 @@
+div{
+    width: 33%;
+    height: 100px;
+    background-color: blue;
+}
+
+.float{
+    display: flow-root;
+}
+.float div{
+   float: left;
+}
+
+.flex{
+    display: flex;
+    justify-content:center;
+/* justify content
+space-evenly / space-between / space-around / 
+left / center / right
+*/
+    align-content: center
+}
+.flex div{
+    background: red;
+    flex-shrink: 1;
+    width: 200px;
+    height: 100px;
+    min-width: 100px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 15% repeat(2, 1fr);
+    grid-template-rows: 300px 100px;
+}
+.grid div{
+    width: 60%;
+    min-height: 50%;
+    overflow: hidden;
+}
+.d1{
+    background-color: cyan;
+    grid-area: 1 / 1 / 3 / 1;
+}
+.d2{
+    background-color: yellow;
+    grid-area: 1 / 2 / 1 / 4;
+}
+.d3{
+    background-color: magenta;
+    grid-area: 2 / 2 / 2 / 4;
+}
