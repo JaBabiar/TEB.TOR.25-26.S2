@@ -28,7 +28,7 @@ Przedmiot skupia się na tworzeniu **aplikacji desktopowych i mobilnych** z wyko
 | **Tydzień 4** | 17.03.2026 | **Aplikacja JS** – struktura projektu, podstawy | [`index.html`](./Tydzien%204/index.html), [`app.js`](./Tydzien%204/app.js) | ✅ | - |
 | **Tydzień 6** | 17.03.2026 | **Strona HTML** – semantyczna struktura | [`index.html`](./Tydzien%206/index.html) | ✅ | - |
 | **Tydzień 7** | 17.03.2026 | **Aplikacja JS** – rozszerzenie funkcjonalności | [`index.html`](./Tydzien%207/index.html), [`app.js`](./Tydzien%207/app.js) | ✅ | - |
-| **Tydzień 8 (PHP)** | 18.03.2026 | **Integracja z PHP** – backend dla aplikacji | [`index.php`](./Tydzien%208%20(PHP)/index.php) | ✅ | [Mini-projekt](#-weryfikacja-wiedzy) |
+
 
 > 💡 **Legenda:** ✅ Zrealizowane | 🔄 W trakcie | ⬜ Do realizacji | ⚠️ Opóźnienie
 

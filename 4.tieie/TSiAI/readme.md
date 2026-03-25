@@ -30,6 +30,7 @@ Przedmiot koncentruje się na **tworzeniu dynamicznych stron internetowych**:
 | **Tydzień 6** | 17.03.2026 | **Struktura HTML** – semantyczne elementy | [`index.html`](./Tydzien%206/index.html) | ✅ | - |
 | **Kartkówka 1** | 17.03.2026 | **Sprawdzenie wiedzy** – HTML/CSS podstawy | [`index.html`](./Kart%201/index.html), [`style.css`](./Kart%201/style.css) | ✅ | [Kart 1](#-weryfikacja-wiedzy) |
 | **INF.03 Egzamin** | 20.03.2026 | **Montaż Paneli Podłogowych** – strona firmowa | [`index.html`](./INF03.02.25.01SG/index.html), [`oferta.html`](./INF03.02.25.01SG/oferta.html), [`koszty.html`](./INF03.02.25.01SG/koszty.html) | ✅ | [Egzamin](#-weryfikacja-wiedzy) |
+| **Tydzień 8** | 25.03.2026 | **Wprowadzenie do PHP** | [`Tydzień 8`]('./Tydzien%208') | ✅ | - |
 
 > 💡 **Legenda:** ✅ Zrealizowane | 🔄 W trakcie | ⬜ Do realizacji | ⚠️ Opóźnienie
 
