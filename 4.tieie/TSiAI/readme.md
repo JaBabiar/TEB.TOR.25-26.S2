@@ -52,6 +52,3 @@ Przedmiot koncentruje się na **tworzeniu dynamicznych stron internetowych**:
 - [ ] Commit z opisem: `TSiAI: Tydzień X - [krótki opis]`
 - [ ] Push po przetestowaniu całości
 
----
-
-## 📁 Struktura materiałów
