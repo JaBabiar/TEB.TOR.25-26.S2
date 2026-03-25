@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <label for="ID_INPUTA"> tekst </label>
+    <input type="text/number/password/email" id="ID_INPUTA">
+    -->
+    <form>
+        <label for="name">Imie</label>
+        <input type="text"id="name" name="name">
+
+        <label for="mail">E-Mail</label>
+        <input type="email" id="mail" name="mail">
+
+        <button type="button">Aplikuj o Wize do Chin</button>
+
+    </form>
+</body>
+</html>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+form{
+    margin: 20px;
+    padding: 20px;
+    width: 350px;
+    background-color: red;
+    color: yellow;
+       transition: all .2s ease-in-out; 
+}
+
+form input{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px 8px;
+    
+}
+button{
+    border: 2px solid yellow;
+    background-color: red;
+    width: 100%;
+    padding: 5px 10px;
+    transition: all .2s ease-in-out; 
+}
+
+button:hover{
+    border: 2px solid red;
+    background-color: yellow;
+}
+
+form:hover{
+    rotate: -5deg;
+}
+</style>
