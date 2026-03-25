@@ -1,10 +1,6 @@
 
----
-
-## 📄 `TSiAI/README.md` — Tworzenie Stron Internetowych
-
-```markdown
 # 🌐 TSiAI – Tworzenie Stron Internetowych
+
 > **Klasa:** 4TIEIE | **Semestr:** 2025/2026 S2 | **Tech Stack:** PHP • HTML/CSS • JavaScript • Backend
 
 ![Status](https://img.shields.io/badge/status-w_trakcie-yellow) 
@@ -12,10 +8,10 @@
 ![CSS3](https://img.shields.io/badge/tech-CSS3-1572B6?logo=css3&logoColor=white)
 ![Ostatnia aktualizacja](https://img.shields.io/badge/ostatnia_aktualizacja-2026--03-blue)
 
----
-
 ## 🎯 Opis przedmiotu
+
 Przedmiot koncentruje się na **tworzeniu dynamicznych stron internetowych**:
+
 - ✅ Podstawy HTML5 – struktura semantyczna
 - ✅ CSS3 – style, layout, responsywność
 - ✅ JavaScript – interaktywność strony
@@ -42,12 +38,14 @@ Przedmiot koncentruje się na **tworzeniu dynamicznych stron internetowych**:
 ## 🧪 Weryfikacja wiedzy
 
 ### 📋 Kartkówki i sprawdziany
+
 | Nazwa | Data | Zakres | Forma | Link |
 |-------|------|--------|-------|------|
 | **Kart 1** | 17.03.2026 | Podstawy HTML/CSS | Praktyczna (kod) | [`Kart 1/`](./Kart%201/) |
 | **INF.03 Egzamin** | 20.03.2026 | Strona firmowa multi-page | Praktyczno-teoretyczna | [`INF03.02.25.01SG/`](./INF03.02.25.01SG/) |
 
 ### ✅ Kryteria zaliczenia tygodnia
+
 - [ ] Strona wyświetla się poprawnie w przeglądarce
 - [ ] Nawigacja między podstronami działa (index ↔ oferta ↔ koszty)
 - [ ] Style CSS są poprawnie zastosowane
