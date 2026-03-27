@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-KARTA PRACY UCZNIA - Funkcje lambda
-INF.04 | Imię i nazwisko: ___________________
-"""
-
 # ===== ZADANIE 1: Podstawy =====
 # Napisz funkcję lambda, która:
 # a) mnoży liczbę przez 3
