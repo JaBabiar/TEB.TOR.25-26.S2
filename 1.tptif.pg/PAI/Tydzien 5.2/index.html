@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <input type="number" name="n1" id="n1">
+   <input type="number" name="n2" id="n2">
+   <div>
+        <label for="dodawanie">dodawanie</label>
+        <input type="radio" name="typ" id="dodawanie" value="dodaj">
+
+        <label for="odejmowanie">odejmowanie</label>
+        <input type="radio" name="typ" id="odejmowanie" value="odejmij">
+
+        <label for="mnozenie">mnozenie</label>
+        <input type="radio" name="typ" id="mnozenie" value="mnoz">
+
+        <label for="dzielenie">dzielenie</label>
+        <input type="radio" name="typ" id="dzielenie" value="dziel">
+   </div>
+
+   <button id="oblicz" onclick="obliczCyfry()">Oblicz</button>
+</body>
+</html>
+<script src="./app.js" type="text/javascript"></script>
