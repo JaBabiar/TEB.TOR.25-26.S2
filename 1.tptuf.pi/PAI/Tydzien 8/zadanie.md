@@ -14,3 +14,4 @@
 5. Zbuduj i wyświetl w przygotowanym do tego elemencie HTML komunikat o dokładnej strukturze:  
    `Witaj [Imię]! Twój ulubiony kolor to [Kolor].`
 
+
