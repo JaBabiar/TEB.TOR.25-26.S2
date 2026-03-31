@@ -7,11 +7,11 @@
 4. **Wymóg dostępności (WCAG):** Każde pole wejściowe musi bezwzględnie posiadać własny znacznik `<label>`. Znaczniki te muszą być poprawnie powiązane z odpowiednimi polami za pomocą atrybutów `for` oraz `id`.
 
 ## **Część 2: Logika JavaScript**
-1. Pobierz referencje do elementu formularza, obu pól tekstowych oraz pustego elementu przeznaczonego na wynik.
+1. Pobierz referencje do elementu formularza, obu pól input tekst i kolor.
 2. Zdefiniuj nasłuchiwanie zdarzenia wysłania formularza (`submit`).
 3. Zablokuj domyślne zachowanie przeglądarki, aby zapobiec odświeżeniu strony po kliknięciu przycisku.
 4. Pobierz wartości wprowadzone przez użytkownika do obu pól.
-5. Zbuduj i wyświetl w przygotowanym do tego elemencie HTML komunikat o dokładnej strukturze:  
+5. Zbuduj i wyświetl w konsoli komunikat o dokładnej strukturze:  
    `Witaj [Imię]! Twój ulubiony kolor to [Kolor].`
 
 
