@@ -1,6 +1,6 @@
 let form = document.getElementById("formLogin");
 
-form.addEventListener("submit", function(e){
+function nazwaFunkcji(e) {
     e.preventDefault();
     console.log("Formularz został wysłany");
 
@@ -12,11 +12,12 @@ form.addEventListener("submit", function(e){
     // ! - operator logiczny NOT, zwraca true jeśli operand jest falsy, a false jeśli operand jest truthy
     if (name == "" || date == "") {
         console.error("Nie podano imienia lub daty");
-        return
+        return false
     }
     
     
     
     console.log(name + " Ur. " + date);
-})
+    return false
+}
 // https://github.com/JaBabiar/TEB.TOR.25-26.S2
