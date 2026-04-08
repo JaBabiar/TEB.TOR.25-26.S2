@@ -1,3 +1,8 @@
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QLabel, 
+                             QPushButton, QWidget, QVBoxLayout, 
+                             QHBoxLayout, QMessageBox)
+from PyQt6.QtCore import Qt
+from logic import Postac
 class Okno(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -13,7 +18,6 @@ class Okno(QMainWindow):
         
         self.etkieta_statusu = QLabel(self.bohater.get_status())
         self.etkieta_statusu.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.etkieta_statusu.setFixedHeight(50)
         
         self.buttonsLayout = QHBoxLayout()
         self.buttonsLayout.setSpacing(15)
@@ -46,7 +50,7 @@ class Okno(QMainWindow):
                 padding: 10px;
                 font-size: 18px;
                 font-weight: bold;
-                color: #333333;
+                color: #FF0000;
                 border: 2px solid #dddddd;
             }
         """)
