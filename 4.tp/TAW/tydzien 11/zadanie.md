@@ -21,7 +21,7 @@ Twój komponent powinien nazywać się `QuickNote`. Zaimplementuj w nim następu
 ### 3. Efekty Uboczne (`useEffect`)
 
 * **Efekt 1 (Focus na start):** Napisz efekt, który uruchomi się **tylko raz** przy zamontowaniu komponentu. Użyj utworzonej referencji, aby automatycznie ustawić kursor wewnątrz pola tekstowego, tak by użytkownik mógł od razu zacząć pisać po wejściu na stronę.
-* **Efekt 2 (Autozapis):** Napisz drugi efekt, który reaguje na **każdą zmianę** stanu `noteText`. Kiedy tekst się zmienia, efekt powinien zapisywać go do `localStorage` pod kluczem (np. `"saved_note"`). Zmiana tytułu karty w przeglądarce na "Zapisano zmiany!" na ułamek sekundy to fajny bonus.
+* **Efekt 2 (Autozapis):** Napisz drugi efekt, który reaguje na **każdą zmianę** stanu `noteText`. Kiedy tekst się zmienia, efekt powinien zapisywać go stanu. Zmiana tytułu karty w przeglądarce na "Zapisano zmiany!" na ułamek sekundy to fajny bonus.
 
 ### 4. Interfejs (UI) i Akcje
 
