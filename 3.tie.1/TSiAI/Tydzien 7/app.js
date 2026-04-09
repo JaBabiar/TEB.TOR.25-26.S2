@@ -19,6 +19,7 @@ let submit = document.getElementById('submit')
 let userName = document.getElementById("name")
 let email = document.getElementById("email")
 let pwd = document.getElementById("pwd")
+
 submit.addEventListener("click", function(){
     if(!pwd.value || !userName.value || !email.value){
         console.error("Błąd Rejestracji")
