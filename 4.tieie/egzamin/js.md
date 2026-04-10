@@ -30,14 +30,24 @@ zmiennaTekstowa.toUpperCase() // Wypisze wszystko wielkimi literami
 
 ### INT i Float (Numeryczne)
 
+Dane zapisane w HTML to zawsze jest tekst więc musimy je konwertować na liczby, (Bez konwersji nasze `2+2` pobrane z `input:number` wypisze `22`)
+>> *UWAGA* - zmienne w javascript podlegają automatycznej konwersji więc dodawanie będzie jedynym przypadkiem gdzie brak konwersji będzie zauważalny 
+
 ```javascript
 let number = 8
+let liczbaCalkowita = parseInt("8"); // Zamienia tekst na liczbę całkowitą (8)
+let liczbaZmiennoprzecinkowa = parseFloat("8.5"); // Zamienia tekst na ułamek (8.5)
 
+// Przykład zastosowania z formularzem:
+let wiek = parseInt(document.getElementById("wiekInput").value);
 
 ```
 
 ## Pętle For i While
 
+### Pętle For
+
+### Pętle While 
 ## pobieranie danych z formularza
 
 ## Wypisanie danych do HTML
