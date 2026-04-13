@@ -22,8 +22,21 @@ msi_sprzet = [
     {"nazwa": "MSI Agility GD20", "typ": "podkładka", "cena": 45},
     {"nazwa": "MSI Agility GD60", "typ": "podkładka", "cena": 150}
 ]
-minimalna = input("Podaj Cene minimalną: ")
-maksymalna = input("Podaj Cene Maksymalną: ")
-filtrowana = list(filter(lambda x: int(minimalna) <= x["cena"] <= int(maksymalna), msi_sprzet ))
-print(filtrowana)
+#minimalna = input("Podaj Cene minimalną: ")
+#maksymalna = input("Podaj Cene Maksymalną: ")
+#filtrowana = list(filter(lambda x: int(minimalna) <= x["cena"] <= int(maksymalna), msi_sprzet ))
+#print(filtrowana)
 
+## bloki try... except
+def podziel_pizze(osoby, kawałki=8):
+    try:
+        wynik = kawałki / osoby
+        return f"Każda osobo ma {wynik} kawałki"
+    except ZeroDivisionError:
+        return "Nie dziel przez 0"
+    except TypeError:
+        return "Zły typ danych >////<"
+
+print(podziel_pizze(4))
+print(podziel_pizze(0))
+print(podziel_pizze("dwie"))
