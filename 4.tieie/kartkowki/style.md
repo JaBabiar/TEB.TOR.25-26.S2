@@ -22,10 +22,6 @@ Stwórz aplikację webową składającą się z formularza oraz elementu podglą
     * Treść napisu, który pojawi się wewnątrz elementu.
 * **Dostępność (WCAG):** Każde pole formularza musi posiadać poprawnie przypisaną etykietę `<label>`.
 
-#### 2. Stylizacja CSS (2 pkt)
-
-* Element podglądu powinien mieć domyślny kolor, obramowanie oraz wycentrowany tekst (użyj np. Flexbox).
-* Formularz powinien być czytelny i uporządkowany.
 
 #### 3. Logika JavaScript (7 pkt)
 
