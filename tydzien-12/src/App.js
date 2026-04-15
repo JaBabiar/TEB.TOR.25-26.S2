@@ -17,11 +17,13 @@ Z2
 
 import Counter from "./Counter";
 import SearchBox from "./SearchBox";
+import UserList from "./UserList";
 
 function App() {
   return (
     <>
       <Counter />
+      <UserList />
       <SearchBox />
     </>
   );
