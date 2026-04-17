@@ -74,3 +74,16 @@ INSERT INTO users (username, email, passwd) VALUES
 ('JanNowak', 'jan@example.pl', 'qwerty');
 
 ```
+> [!info] Tabela 1. Wybór funkcji języka PHP do obsługi bazy MySQL i MariaDB
+| Funkcja biblioteki `mysqli` | Zwracana wartość |
+| :--- | :--- |
+| `mysqli_connect(serwer, użytkownik, hasło, nazwa_bazy)` | ID połączenia lub `FALSE`, gdy wystąpi niepowodzenie |
+| `mysqli_select_db(id_polaczenia, nazwa_bazy)` | `TRUE`/`FALSE` w zależności od stanu operacji |
+| `mysqli_error(id_polaczenia)` | Tekst komunikatu błędu |
+| `mysqli_close(id_polaczenia)` | `TRUE`/`FALSE` w zależności od stanu operacji |
+| `mysqli_query(id_polaczenia, zapytanie)` | Wynik zapytania |
+| `mysqli_fetch_row(wynik_zapytania)` | Tablica numeryczna odpowiadająca wierszowi zapytania |
+| `mysqli_fetch_array(wynik_zapytania)` | Tablica zawierająca kolejny wiersz z wyniku zapytania lub `FALSE`, jeżeli nie ma więcej wierszy |
+| `mysqli_num_rows(wynik_zapytania)` | Liczba wierszy w podanym zapytaniu |
+| `mysqli_num_fields(wynik_zapytania)` | Liczba kolumn w podanym zapytaniu |
+| `isset($zmienna)` | `TRUE`/`FALSE` w zależności od tego, czy `$zmienna` istnieje |
