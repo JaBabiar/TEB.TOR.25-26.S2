@@ -20,6 +20,6 @@ class TestEdziennik(unittest.TestCase):
     def test_usun_ucznia(self):
         self.k.usun_ucznia("Jan K")
         self.assertNotIn("Jan K", self.k.uczniowie)
-        self.
+
 
 
