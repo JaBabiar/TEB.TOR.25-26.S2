@@ -74,7 +74,7 @@ INSERT INTO users (username, email, passwd) VALUES
 ('JanNowak', 'jan@example.pl', 'qwerty');
 
 ```
-> [!info] Tabela 1. Wybór funkcji języka PHP do obsługi bazy MySQL i MariaDB
+
 | Funkcja biblioteki `mysqli` | Zwracana wartość |
 | :--- | :--- |
 | `mysqli_connect(serwer, użytkownik, hasło, nazwa_bazy)` | ID połączenia lub `FALSE`, gdy wystąpi niepowodzenie |
