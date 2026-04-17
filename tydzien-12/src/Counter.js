@@ -3,8 +3,11 @@ import { useEffect, useRef, useState } from "react"
 function Counter(){
     const [count, setCount] = useState(0)
     const prevCount = useRef()
-
-    useEffect(() => {
+    // Klikamy +
+    // React dostaje zmiane na elemencie count 
+    // wykonuje się useEffect z [count]
+    // Wykonuje się oryginalna funkcja setCount
+    useEffect(function(){
         prevCount.current = count
     }, [count])
 
