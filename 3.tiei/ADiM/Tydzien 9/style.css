@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+section{
+    width: 90%;
+    height: 300px;
+    margin: 20px;
+    background-color: red;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: yellow;
+}
+
+.static{
+    /* Statycznie, podstawowy układ*/
+    position: static;
+}
+.fixed{
+     /*Zawsze w tym samym miejscu ekranu*/
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+}
+.absolute{
+    /* zawsze w tym samym miejscu bloku */
+    position: absolute;
+    top: 50%;
+    right: 10%;
+}
+.relative{
+    /* Ustawienie relatywności dla absolute */
+    position: relative;
+}
+.relative div{
+    position: absolute;
+    top: calc(100% - 20px);
+}
