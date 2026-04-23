@@ -6,23 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="stylishDiv">
-
-    </div>
+    <div id="stylishDiv"></div>
     <button type="button" onclick="handleClickAction()">skibidziak</button>
 </body>
 </html>
-
-
 <script>
     const stylishDiv = document.getElementById("stylishDiv")
     let wiff = 0
+    // blok.style.opcjawyjetazcss = wartosc wpisana tak jak w css
     stylishDiv.style.width = wiff + "%"
+    // zmienia szerokość na 0%
     stylishDiv.style.height = "250px"
+    // zmienia wysokość na 250px
     stylishDiv.style.background = "#067"
-
+    // zmienia kolor tła na #067
     function handleClickAction() {
-        wiff = wiff < 100 ? wiff+10 : 100;
+        // jeżeli szerokość 
+        //wiff = wiff < 100 ? wiff+10 : 100;
+        wiff += 10
+        if(wiff >= 100){
+            wiff = 100
+            return
+        }
         console.log(wiff)
         stylishDiv.style.width = wiff + "%"
     }
