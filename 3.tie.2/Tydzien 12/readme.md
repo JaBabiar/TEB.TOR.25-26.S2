@@ -12,7 +12,8 @@ po czym dodaj przcisk z akcją `onclick` oraz pusty div z id `blok stylowany`
     <label for="szer"></label>
     <input type="text" name="szer" id="szer">
 
-    <div id="" onclick="handleOnClick()">
+    <button  onclick="handleOnClick()"> tekst</button>
+    <div id=""></div>
 ```
 
 ## JS 
