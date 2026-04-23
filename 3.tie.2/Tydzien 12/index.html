@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="stylishDiv">
+
+    </div>
+    <button type="button" onclick="handleClickAction()">skibidziak</button>
+</body>
+</html>
+
+
+<script>
+    const stylishDiv = document.getElementById("stylishDiv")
+    let wiff = 0
+    stylishDiv.style.width = wiff + "%"
+    stylishDiv.style.height = "250px"
+    stylishDiv.style.background = "#067"
+
+    function handleClickAction() {
+        wiff = wiff < 100 ? wiff+10 : 100;
+        console.log(wiff)
+        stylishDiv.style.width = wiff + "%"
+    }
+</script>
