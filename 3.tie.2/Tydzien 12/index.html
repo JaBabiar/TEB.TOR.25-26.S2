@@ -18,7 +18,7 @@
     // zmienia szerokość na 0%
     stylishDiv.style.height = "250px"
     // zmienia wysokość na 250px
-    stylishDiv.style.background = "#067"
+    stylishDiv.style.backgroundColor = "#067"
     // zmienia kolor tła na #067
     function handleClickAction() {
         // jeżeli szerokość 
@@ -26,6 +26,7 @@
         wiff += 10
         if(wiff >= 100){
             wiff = 100
+            stylishDiv.style.width = wiff + "%"
             return
         }
         console.log(wiff)
