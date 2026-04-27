@@ -224,5 +224,3 @@ win = AplikacjaDanych()
 win.show()
 app.exec()
 ```
-
-

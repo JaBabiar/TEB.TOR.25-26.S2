@@ -12,17 +12,17 @@ Oto treść zadania przygotowana do zapisania w pliku `zadanie2.md`. Jest ono sk
 
 Stwórz interfejs aplikacji, który pozwoli zapisać zawodnika na turniej.
 
-1.  **MainWindow:** Ustaw tytuł okna na "Rejestracja Turnieju".
-2.  **Dane tekstowe:** Dodaj `Label` ("Nick:") oraz `Line Edit`. Nazwij go: `input_nick`.
-3.  **Wybór gry (ComboBox):** Dodaj `Label` ("Wybierz grę:") oraz `Combo Box`. W edytorze elementów (kliknij dwa razy na Combo Box) dodaj: *League of Legends*, *Counter-Strike 2*, *Valorant*. Nazwij go: `combo_gra`.
-4.  **Poziom (Radio Buttons):** Dodaj `Group Box` z tytułem "Poziom zaawansowania". W środku umieść dwa `Radio Button`: *Amator* oraz *Pro*. Nazwij je odpowiednio: `radio_amator` i `radio_pro`.
-5.  **Dodatki (CheckBox):** Dodaj `Check Box` z tekstem "Własna myszka". Nazwij go: `check_mysz`.
-6.  **Przyciski:** Dodaj dwa przyciski `Push Button`:
+1. **MainWindow:** Ustaw tytuł okna na "Rejestracja Turnieju".
+2. **Dane tekstowe:** Dodaj `Label` ("Nick:") oraz `Line Edit`. Nazwij go: `input_nick`.
+3. **Wybór gry (ComboBox):** Dodaj `Label` ("Wybierz grę:") oraz `Combo Box`. W edytorze elementów (kliknij dwa razy na Combo Box) dodaj: *League of Legends*, *Counter-Strike 2*, *Valorant*. Nazwij go: `combo_gra`.
+4. **Poziom (Radio Buttons):** Dodaj `Group Box` z tytułem "Poziom zaawansowania". W środku umieść dwa `Radio Button`: *Amator* oraz *Pro*. Nazwij je odpowiednio: `radio_amator` i `radio_pro`.
+5. **Dodatki (CheckBox):** Dodaj `Check Box` z tekstem "Własna myszka". Nazwij go: `check_mysz`.
+6. **Przyciski:** Dodaj dwa przyciski `Push Button`:
     * "Zapisz zawodnika" -> `btn_zapisz`
     * "Pokaż listę" -> `btn_lista`
-7.  **Podgląd:** Dodaj `Plain Text Edit` na dole okna. Nazwij go: `txt_podglad` i zaznacz mu opcję `readOnly`.
-8.  **Layout:** Zastosuj `Vertical Layout` na całym oknie, aby elementy równo się rozkładały.
-9.  **Zapisz plik jako `turniej.ui`.**
+7. **Podgląd:** Dodaj `Plain Text Edit` na dole okna. Nazwij go: `txt_podglad` i zaznacz mu opcję `readOnly`.
+8. **Layout:** Zastosuj `Vertical Layout` na całym oknie, aby elementy równo się rozkładały.
+9. **Zapisz plik jako `turniej.ui`.**
 
 ---
 
