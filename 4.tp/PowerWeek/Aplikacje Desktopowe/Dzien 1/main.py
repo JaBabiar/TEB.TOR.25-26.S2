@@ -18,6 +18,7 @@ class MyApp(QtWidgets.QMainWindow):
         print("atack")
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
+    app.setStyle("fusion")
     window = MyApp()
     window.show()
     app.exec()
