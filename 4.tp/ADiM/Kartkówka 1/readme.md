@@ -1,36 +1,36 @@
-# Karkówka UnitTest
+# Karkówka dzis? 
 
 ## Plik 1: `aplikacja.py`
 
 ```python
 # =====================================================================
-# PLIK: aplikacja.py
+# PLIK: aplikacja.py (GRUPA E)
 # Ten plik zawiera kod źródłowy do przetestowania. 
 # Znajduje się tu tylko jedna klasa.
 # NIE ZMIENIAJ KODU W TYM PLIKU!
 # =====================================================================
 
-class Zamowienie:
-    """Klasa reprezentująca zamówienie w sklepie internetowym."""
+class Rezerwacja:
+    """Klasa reprezentująca rezerwację hotelową."""
     
-    def __init__(self, numer):
-        self.numer = numer
-        self.status = "Nowe"
-        self.suma = 0
+    def __init__(self, nazwisko):
+        self.nazwisko = nazwisko
+        self.ilosc_dni = 0
+        self.zaplacono = False
 
-    def dodaj_produkt(self, cena):
-        """Dodaje cenę produktu do sumy zamówienia. Cena musi być dodatnia."""
-        if cena <= 0:
-            raise ValueError("Cena produktu musi być większa od zera!")
-        self.suma += cena
+    def dodaj_dni(self, liczba_dni):
+        """Zwiększa czas trwania rezerwacji. Liczba dni musi być dodatnia."""
+        if liczba_dni <= 0:
+            raise ValueError("Liczba dni musi być większa od zera!")
+        self.ilosc_dni += liczba_dni
 
-    def oplac(self):
-        """Zmienia status zamówienia na opłacone."""
-        self.status = "Opłacone"
+    def potwierdz_wplate(self):
+        """Oznacza rezerwację jako opłaconą."""
+        self.zaplacono = True
 
-    def gotowe_do_wysylki(self):
-        """Zwraca prawdę, jeśli zamówienie zostało opłacone."""
-        return self.status == "Opłacone"
+    def czy_wazna(self):
+        """Zwraca prawdę, jeśli rezerwacja trwa minimum 1 dzień i jest opłacona."""
+        return self.ilosc_dni > 0 and self.zaplacono
 ```
 
 ---
@@ -41,25 +41,26 @@ class Zamowienie:
 # =====================================================================
 # KARTKÓWKA: Testowanie jednostkowe w Pythonie (biblioteka unittest)
 # Maksymalna liczba punktów: 20
+# GRUPA: E
 # Imię i nazwisko: ....................................................
 # =====================================================================
 
 import unittest
 
 # Importujemy NASZĄ JEDYNĄ KLASĘ z pliku aplikacja.py do przetestowania
-from aplikacja import Zamowienie
+from aplikacja import Rezerwacja
 
 # ---------------------------------------------------------------------
 # ZADANIE 1: Podstawy tworzenia testów i asercje (7 punktów)
 # ---------------------------------------------------------------------
 
-# a) (2 pkt) Utwórz klasę testową o nazwie TestPodstawowyZamowienia, która
+# a) (2 pkt) Utwórz klasę testową o nazwie TestPodstawowyRezerwacji, która
 #    dziedziczy po odpowiedniej klasie z biblioteki unittest.
 # b) (2 pkt) Wewnątrz klasy napisz metodę testową. Utwórz w niej obiekt 
-#    Zamowienie(100), wywołaj na nim metodę dodaj_produkt(50), a następnie 
-#    sprawdź, czy jego atrybut 'suma' wynosi dokładnie 50.
-# c) (2 pkt) Wewnątrz klasy napisz drugą metodę testową. Utwórz nowe zamówienie,
-#    a następnie sprawdź, czy metoda gotowe_do_wysylki() zwraca fałsz.
+#    Rezerwacja("Kowalski"), wywołaj na nim metodę dodaj_dni(5), a następnie 
+#    sprawdź, czy jego atrybut 'ilosc_dni' wynosi dokładnie 5.
+# c) (2 pkt) Wewnątrz klasy napisz drugą metodę testową. Utwórz nową rezerwację,
+#    a następnie sprawdź, czy metoda czy_wazna() zwraca fałsz.
 # Miejsce na Twój kod:
 
 
@@ -79,18 +80,18 @@ from aplikacja import Zamowienie
 # ZADANIE 2: Przydatne metody asercji i błędy (5 punktów)
 # ---------------------------------------------------------------------
 
-class TestZaawansowanyZamowienia(unittest.TestCase):
+class TestZaawansowanyRezerwacji(unittest.TestCase):
     
     # a) (2 pkt) Uzupełnij poniższy test. Sprawdź odpowiednią asercją, czy 
-    #    atrybut 'status' w obiekcie z jest typu tekstowego (str).
-    def test_typu_statusu(self):
-        z = Zamowienie(200)
+    #    atrybut 'nazwisko' w obiekcie r jest typu tekstowego (str).
+    def test_typu_nazwiska(self):
+        r = Rezerwacja("Nowak")
         # <-- Tutaj dodaj asercję sprawdzającą typ zmiennej
 
-    # b) (3 pkt) Napisz test, który sprawdzi, czy wywołanie z.dodaj_produkt(-10) 
-    #    poprawnie zgłasza błąd ValueError (niedozwolona ujemna cena).
-    def test_ujemnej_ceny(self):
-        z = Zamowienie(200)
+    # b) (3 pkt) Napisz test, który sprawdzi, czy wywołanie r.dodaj_dni(-2) 
+    #    poprawnie zgłasza błąd ValueError (niedozwolona ujemna liczba dni).
+    def test_ujemnej_liczby_dni(self):
+        r = Rezerwacja("Nowak")
         pass  # <-- Zastąp słowo 'pass' swoim kodem
 
 
@@ -98,22 +99,23 @@ class TestZaawansowanyZamowienia(unittest.TestCase):
 # ZADANIE 3: Przygotowanie środowiska - metoda setUp (8 punktów)
 # ---------------------------------------------------------------------
 
-class TestProcesuZamowienia(unittest.TestCase):
+class TestProcesuRezerwacji(unittest.TestCase):
     
     # a) (3 pkt) Uzupełnij specjalną metodę, która wykonuje się automatycznie 
     #    przed KAŻDYM testem. Wewnątrz niej utwórz nowy obiekt 
-    #    klasy Zamowienie(300) i przypisz go do atrybutu (self.moje_zamowienie).
+    #    klasy Rezerwacja("Malinowski") i przypisz go do atrybutu (self.moja_rezerwacja).
     def setUp(self):
         pass
 
-    # b) (3 pkt) Napisz test sprawdzający, czy po utworzeniu zamówienia 
-    #    (self.moje_zamowienie) jego początkowa 'suma' wynosi 0. 
-    def test_poczatkowa_suma(self):
+    # b) (3 pkt) Napisz test sprawdzający, czy po utworzeniu rezerwacji 
+    #    (self.moja_rezerwacja) jej atrybut 'zaplacono' ma wartość Fałsz. 
+    def test_poczatkowy_status_platnosci(self):
         pass
 
-    # c) (2 pkt) Napisz test sprawdzający proces opłacania.
-    #    Wywołaj metodę oplac() na self.moje_zamowienie, a następnie 
-    #    sprawdź, czy metoda gotowe_do_wysylki() zwraca prawdę.
-    def test_oplacenia_zamowienia(self):
+    # c) (2 pkt) Napisz test sprawdzający proces aktywacji rezerwacji.
+    #    Wywołaj metodę potwierdz_wplate(), a także dodaj 3 dni (dodaj_dni(3)) 
+    #    na obiekcie self.moja_rezerwacja. Następnie sprawdź, czy 
+    #    metoda czy_wazna() zwraca prawdę.
+    def test_waznosci_rezerwacji(self):
         pass
 ```
