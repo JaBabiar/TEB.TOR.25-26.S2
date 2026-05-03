@@ -85,34 +85,77 @@ Odpowiada tylko: **Prawda (`true`)** albo **Fałsz (`false`)**.
 
 ---
 ## 🚦<a id="dzial-3"></a>3. Instrukcje Warunkowe (Podejmowanie decyzji)
-Program musi wiedzieć, co zrobić w zależności od sytuacji.
-### Konstrukcja `if / else` (Jeśli / W przeciwnym razie)
+Każdy program musi wiedzieć, co zrobić w zależności od sytuacji. Wyobraź to sobie jako **bramkarza w klubie** lub **kasjera w kinie**, który zadaje pytanie i na podstawie odpowiedzi podejmuje decyzję.
+
+### ⚖️ Konstrukcja `if / else` (Jeśli / W przeciwnym razie)
+
+To najprostszy sposób podejmowania decyzji. Mamy tylko dwie drogi: Prawda albo Fałsz.
+
 ```javascript
 let wiek = 18;
 
 if (wiek >= 18) {
-// Co ma się stać, jeśli warunek to PRAWDA
-	console.log("Jesteś pełnoletni");
+    
+    // ✅ Droga 1: Co ma się stać, jeśli warunek to PRAWDA
+    console.log("Wchodzisz, jesteś pełnoletni!");
+
 } else {
-// Co ma się stać, jeśli warunek to FAŁSZ
-	console.log("Jesteś niepełnoletni");
+    
+    // ❌ Droga 2: W przeciwnym razie (jeśli to FAŁSZ)
+    console.log("Stop, jesteś niepełnoletni!");
+
 }
 ```
 
-### Konstrukcja `switch` (Wybór z wielu opcji)
-Przydatna, gdy sprawdzasz jedną zmienną pod kątem wielu konkretnych wartości (np. wybór usługi u fryzjera).
-```javascript
-let usluga = 2;
+### 🔀 Konstrukcja `else if` (A jeśli jednak...)
 
-switch (usluga) {
+Czasami dwie opcje to za mało. Chcemy sprawdzić kilka rzeczy po kolei. Używamy do tego `else if`. 
+Program sprawdza warunki z góry na dół. **Zatrzyma się od razu, gdy znajdzie pierwszą pasującą Prawdę.**
+
+```javascript
+let punkty = 85;
+
+if (punkty >= 90) {
+    // Pierwsze sprawdzenie
+    console.log("Dostajesz ocenę: 5");
+
+} else if (punkty >= 75) {
+    // Jeśli pierwsze to fałsz, sprawdź to
+    console.log("Dostajesz ocenę: 4");
+
+} else {
+    // Jeśli nic wcześniej nie pasowało (wyjście awaryjne)
+    console.log("Dostajesz ocenę: 2");
+}
+```
+### 🕹️ Konstrukcja `switch` (Wybór z wielu gotowych opcji)
+
+Używamy jej, gdy sprawdzamy **jedną konkretną zmienną** i mamy przygotowaną listę gotowych przypadków (np. dni tygodnia, numer wybranej usługi u fryzjera, poziom trudności w grze). 
+
+Działa to jak automat z napojami – wciskasz guzik numer 2 i dostajesz przypisany do niego napój.
+
+> ⚠️ **Ważne słowo na egzamin:** Słowo **`break`** (przerwij) to absolutna podstawa! Oznacza ono: *"Znalazłem to, czego szukałem, wykonaj kod i uciekaj stąd!"*. Jeśli go zapomnisz, program wykona wszystkie opcje poniżej!
+
+```javascript
+let wybranaUsluga = 2;
+let cenaDoZaplaty = 0;
+
+switch (wybranaUsluga) {
+    
     case 1:
-        cena = 50; // Jeśli usluga to 1
-        break;     // Zatrzymaj sprawdzanie!
+        // Co robimy, gdy wybrano opcję 1
+        cenaDoZaplaty = 50; 
+        break; // Uciekamy!
+        
     case 2:
-        cena = 100; // Jeśli usluga to 2
-        break;
+        // Co robimy, gdy wybrano opcję 2
+        cenaDoZaplaty = 100; 
+        break; // Uciekamy!
+        
     default:
-        cena = 0;   // W każdym innym przypadku
+        // "Wyjście awaryjne" – jeśli ktoś wpisał np. numer 99
+        cenaDoZaplaty = 0; 
+        console.log("Nie mamy takiej usługi!");
 }
 ```
 
