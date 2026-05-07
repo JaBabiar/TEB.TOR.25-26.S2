@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+       
+        <label for="rodzaj_paliwa">Rodzaj Paliwa: </label>
+        <input type="number" id="rodzaj_paliwa" name="rodzaj_paliwa">
+        <br>
+
+        <label for="ilosc_litrow">Ilosc Litrow: </label>
+        <input type="number" name="ilosc_litrow" id="ilosc_litrow">
+        <br>
+        <button type="button" onclick="obliczKoszt()">Oblicz</button>
+    </main>
+    <footer></footer>
+</body>
+</html>
+
+<script>
+
+    function obliczKoszt()
+    {
+        let rodzajPaliwa = document.getElementById("rodzaj_paliwa").value
+        let iloscLitrow = document.getElementById("ilosc_litrow").value
+        let koszt = 0
+
+        
+        if(rodzajPaliwa == 1) {
+            koszt = 4
+        } 
+        if(rodzajPaliwa == 2){
+            koszt = 3.5
+        }
+
+        let wynik = koszt*iloscLitrow
+        console.log("koszt paliwa: " + wynik)
+    }
+
+
+</script>
