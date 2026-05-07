@@ -11,7 +11,7 @@ class GraczTest(unittest.TestCase):
     def test_dodaj_punkty(self):
         self.g.dodaj_punkty(10)
         self.assertEqual(self.g.points, 10)
-
+        
     def test_podnoszenia_itemow(self):
         self.g.podnies_przedmiot("Miecz")
         self.assertIn("Miecz", self.g.ekwipunek)
