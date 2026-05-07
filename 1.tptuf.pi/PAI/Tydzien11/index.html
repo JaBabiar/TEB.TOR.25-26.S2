@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="imie">Imię</label>
+    <input type="text" name="imie" id="imie">
+    
+    <label for="wiek">Wiek</label>
+    <input type="number" name="wiek" id="wiek">
+    
+    <button id="btnCheck">Sprawdź dane</button>
+</body>
+</html>
+
+<script>
+let btnCheck = document.getElementById("btnCheck");
+
+let wiek = document.getElementById("wiek");
+let imie = document.getElementById("imie");
+
+btnCheck.addEventListener("click", function(){
+    if (!imie.value || wiek.value <= 0) {
+        console.error("Wprowadzono niepoprawne dane");
+        return;
+    }
+    console.log("Witaj "+ imie.value +", Twój wiek to "+ wiek.value);
+    
+})
+</script>

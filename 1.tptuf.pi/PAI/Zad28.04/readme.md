@@ -1,7 +1,7 @@
 
 # Zadanie: Pobieranie i weryfikacja danych (INF.03)
 
-## Krok 1: Struktura HTML
+## HTML
 W pliku `index.html` wygeneruj strukturę, korzystając z poniższego schematu Emmet (bez użycia bloku `<form>`):
 
 ```text
