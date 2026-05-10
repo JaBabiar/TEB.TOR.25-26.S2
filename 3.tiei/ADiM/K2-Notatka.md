@@ -120,7 +120,3 @@ Jeśli dodasz słowo kluczowe `inset` na początku lub na końcu, cień pojawi s
 }
 
 ```
-
-```
-
-```
