@@ -6,8 +6,8 @@ W pliku `index.html` przygotuj odpowiednią strukturę interfejsu.
 
 **Wymagania:**
 
-* **Pierwsza para:** Etykieta "Tytuł filmu" oraz pole tekstowe.
-* **Druga para:** Etykieta "Liczba biletów" oraz pole typu liczbowego.
+* **Pierwsza para:** Label "Tytuł filmu" oraz pole tekstowe.
+* **Druga para:** Label "Liczba biletów" oraz pole typu liczbowego.
 * **Przycisk:** Napis "Oblicz koszt".
 * **Dostępność:** Połącz etykiety z polami za pomocą atrybutów `id` oraz `for` (zgodnie z wytycznymi WCAG).
 
