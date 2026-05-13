@@ -27,3 +27,14 @@
 * zapisuje pobrany wynik w stanie (`useState`)
 * wyświetla status ładowania ("Wczytywanie..."), błąd lub nazwę gracza w zależności od stanu zapytania
 * używa funkcji czyszczącej (cleanup function) w `useEffect`, aby bezpiecznie obsłużyć odmontowanie komponentu w trakcie pobierania danych
+
+Oto najprostsza możliwa wersja zadania z `useEffect`, która nie wymaga znajomości asynchroniczności, timerów, API ani zdarzeń okna. Klasycznym i najłatwiejszym przykładem na zrozumienie "efektu ubocznego" jest zmiana tytułu zakładki w przeglądarce.
+
+## Zadanie 3 (ALT) - Aktualizacja tytułu strony (4 pkt)
+
+### Stwórz komponent TabTitleChanger, który:
+
+* wyświetla aktualną liczbę punktów oraz przycisk "Dodaj punkt"
+* używa `useState` do przechowywania liczby punktów (zaczynając od 0)
+* używa `useEffect`, aby za każdym razem, gdy zmieni się liczba punktów, zaktualizować tytuł zakładki w przeglądarce (wykorzystując do tego `document.title`)
+* nowy tytuł karty powinien brzmieć np.: "Zdobyte punkty: X" (gdzie X to aktualny stan)
