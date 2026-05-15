@@ -5,7 +5,11 @@ import Card from './Card';
 function App() {
     let nazwaGryRef = useRef('');
     const [gry, setGry] = useState(gryData.map((gra) => <Card key={gra.id} title={gra.title} descr={gra.short_description} thumbnail={gra.thumbnail} />))
-
+    
+    const [zmienna, funkcjaUstawiajacaZmienna] = useState()
+    function handleButtonClick(){
+        setGry(gry++)
+    }
     
     function szukajGry(e){
         e.preventDefault()

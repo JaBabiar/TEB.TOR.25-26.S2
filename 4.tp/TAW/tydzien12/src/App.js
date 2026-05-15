@@ -1,6 +1,7 @@
 
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
+import Kompot from './Kompot';
 
 function App() {
   const [name, setName] = useState('')
@@ -18,11 +19,7 @@ function App() {
     console.log(autor.current.value)
     console.log(genre.current.value)
 
-    setElems(elems.push([
-      title.current.value,
-      autor.current.value,
-      genre.current.value
-    ]))
+    setElems(prev => [...prev, [title.current.value, autor.current.value, genre.current.value]]);
   }
 
   useEffect(function(){
@@ -43,6 +40,10 @@ function App() {
 
         <button onClick={handleFormUpload}>Dodaj</button>
       </form>
+
+      {String(elems)}
+
+      <Kompot />
     </>
   );
 }

@@ -12,6 +12,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def loginUser(self):
         print(f"Zalogowano jako {self.ui.login.text()} za pomocą hasła {self.ui.pwd.text()}" )
+        
 if "__main__" == __name__:
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle('fusion')
