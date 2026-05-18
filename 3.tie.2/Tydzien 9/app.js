@@ -8,7 +8,7 @@ function jakasaNaszaFunkcja(){
     // ! - negacja !prawda = fałsz 
     // && - AND oba warunki muszą zostać spełnione 
     // || - OR jeden z warunków musi zostać spełniony 
-    if(!sp.value && !sk.value){
+    if(!sp.value || !sk.value){
         //wypisze w konsoli na czerowono
         console.error("Brak wymaganych danych")
         return // zakończy działanie funkcji z powodu błędu 
