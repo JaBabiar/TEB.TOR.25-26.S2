@@ -1,0 +1,19 @@
+section{
+    display: flex;
+    gap: 20px;
+    height: 500px;
+}
+div{
+    height: 400px;
+    background: red;
+    flex: 1;
+}
+
+@media screen and (max-width: 700px){
+    div{
+        background: blue;
+    }
+    section{
+        flex-direction: column;
+    }
+}

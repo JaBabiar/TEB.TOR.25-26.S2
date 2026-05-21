@@ -1,3 +1,5 @@
+# Zadanie + Notatka
+
 ## Część I. Aplikacja konsolowa
 
 Zaprogramuj klasę o nazwie `Wyszukiwanie` implementującą logikę algorytmu wyszukiwania elementu w zbiorze z wykorzystaniem tzw. wartownika.
@@ -58,6 +60,7 @@ autor: <numer zdającego>
 ---
 
 ## Notatka
+
 Skopiuj poniższy blok kodu i wklej go bezpośrednio do pliku np. `README.md` lub `Zadanie_Wartownik.md` w swoim repozytorium na GitHubie.
 
 ### Rozwiązywanie Aplikacji Konsolowych na egzaminie INF.04 (Python)
