@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        #s1{
+            background-color: red;
+        }
+        #s2{
+            background-color: green;
+        }
+        #s3{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="zmienScene(0)">Scena 0</button>
+    <button onclick="zmienScene(1)">Scena 1</button>
+    <button onclick="zmienScene(2)">Scena 2</button>
+    <section id="s1"></section>
+    <section id="s2"></section>
+    <section id="s3"></section>
+</body>
+</html>
+
+<script>
+    const sekcje = document.querySelectorAll("body > section#s1 input[type='']")
+    console.dir(sekcje)
+
+    function zmienScene(id) {
+        sekcje[id].style.display = "none"
+    }
+
+
+</script>

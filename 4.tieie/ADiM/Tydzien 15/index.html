@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        figure {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        figure img {
+            min-width: 100%;
+            min-height: 100%;
+            max-width: auto;
+            max-height: 100%;
+        }
+        .mainObraz img{
+            height: 600px;
+            width: auto;
+        }
+        .miniaturyZdjec{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="mainObraz">
+        <button onclick="prev()">Prev</button>
+        <img src="1.jpg" alt="galeria" id="mainZdj">
+        <button onclick="next()">Next</button>
+    </section>
+    <section class="miniaturyZdjec">
+        <figure>
+            <img src="1.jpg" alt="miniatura">
+        </figure>
+        <figure>
+            <img src="2.jpg" alt="miniatura">
+        </figure>
+        <figure>
+            <img src="3.jpg" alt="miniatura">
+        </figure>
+        <figure>
+            <img src="4.jpg" alt="miniatura">
+        </figure>
+        <figure>
+            <img src="5.jpg" alt="miniatura">
+        </figure>
+
+
+
+
+    </section>
+</body>
+
+</html>
+
+<script>
+    const mainZdj = document.getElementById("mainZdj")
+    let listaObrazow = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"]
+    let currentImg = 0
+    function prev() {
+        if(currentImg == 0){ 
+            currentImg = 4
+        } else {
+            currentImg -= 1
+        }
+        mainZdj.src = listaObrazow[Math.abs(currentImg)]
+    }
+    function next(){
+        if(currentImg == 4){
+            currentImg = 0
+        } else {
+            currentImg += 1
+        }
+        mainZdj.src = listaObrazow[Math.abs(currentImg)]
+    }
+
+
+
+
+</script>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ośrodek Wypoczynkowy Lazur - Wczasy Rodzinne w Poddąbiu</title>
+    <meta name="description" content="Zaplanuj niezapomniane wczasy rodzinne w Poddąbiu. Ośrodek Lazur oferuje komfortowe domki, bliskość plaży i moc atrakcji dla dzieci. Zarezerwuj już dziś!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lazur: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Styl dla widocznego focusu (wymóg WCAG) */
+        *:focus-visible {
+            outline: 3px solid #0284c7 !important;
+            outline-offset: 2px;
+        }
+        /* Płynne przewijanie */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+    <a href="#glowna-tresc" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-lazur-600 text-white px-4 py-2 rounded-md z-50">
+        Przejdź do głównej treści
+    </a>
+
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-lazur-700 tracking-wide aria-label='Ośrodek Lazur - Strona główna'">
+                        Lazur <span class="text-amber-500">Poddąbie</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8" aria-label="Nawigacja główna">
+                    <a href="#o-nas" class="text-slate-700 hover:text-lazur-600 font-medium transition-colors duration-200">O nas</a>
+                    <a href="#domki" class="text-slate-700 hover:text-lazur-600 font-medium transition-colors duration-200">Domki</a>
+                    <a href="#atrakcje" class="text-slate-700 hover:text-lazur-600 font-medium transition-colors duration-200">Atrakcje dla dzieci</a>
+                    <a href="#kontakt" class="text-slate-700 hover:text-lazur-600 font-medium transition-colors duration-200">Kontakt</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <a href="#kontakt" class="bg-lazur-600 hover:bg-lazur-700 text-white font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all duration-200 text-center">
+                        Zarezerwuj wczasy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="glowna-tresc">
+
+        <section class="relative bg-lazur-900 text-white overflow-hidden" aria-labelledby="hero-heading">
+            <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center text-center">
+                <span class="text-amber-400 font-semibold tracking-wider uppercase mb-3">Idealne wczasy rodzinne nad Bałtykiem</span>
+                <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 max-w-3xl">
+                    Odkryj spokój i magię Poddąbia w Ośrodku Lazur
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-100 mb-10 max-w-2xl">
+                    Bezpieczny, zielony teren, komfortowe domki i zaledwie kilka kroków od szumu bałtyckich fal. Stworzone z myślą o uśmiechu Twojego dziecka.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#domki" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg transition-all text-lg">
+                        Zobacz nasze domki
+                    </a>
+                    <a href="#o-nas" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl backdrop-blur-sm border border-white/30 transition-all text-lg">
+                        Dowiedz się więcej
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="o-nas" class="py-20 bg-white" aria-labelledby="onas-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 id="onas-heading" class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Dlaczego rodziny wybierają Lazur?</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Poddąbie to perła wybrzeża otoczona lasami bukowo-sosnowymi. Nasz ośrodek to oaza bezpiecznego wypoczynku.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm text-center">
+                        <div class="w-12 h-12 bg-lazur-100 text-lazur-700 rounded-xl flex items-center justify-center mx-auto mb-5" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Blisko plaży</h3>
+                        <p class="text-slate-600">Spacerem przez malowniczy, zacieniony las dotrzesz do pięknej, szerokiej plaży w zaledwie kilka minut.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm text-center">
+                        <div class="w-12 h-12 bg-lazur-100 text-lazur-700 rounded-xl flex items-center justify-center mx-auto mb-5" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Zagrażony i bezpieczny teren</h3>
+                        <p class="text-slate-600">Cały teren ośrodka jest ogrodzony i monitorowany. Twoje dzieci mogą bawić się swobodnie, a Ty możesz odpocząć.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm text-center">
+                        <div class="w-12 h-12 bg-lazur-100 text-lazur-700 rounded-xl flex items-center justify-center mx-auto mb-5" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/xl" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Raj dla najmłodszych</h3>
+                        <p class="text-slate-600">Nowoczesny plac zabaw, trampoliny, gokarty i codzienne animacje sprawią, że nuda u nas nie istnieje.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="domki" class="py-20 bg-slate-100" aria-labelledby="domki-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 id="domki-heading" class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Nasze komfortowe domki</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Oferujemy w pełni wyposażone, piętrowe i parterowe domki drewniane idealne dla rodzin od 4 do 6 osób.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Widok zewnętrzny drewnianego domku piętrowego typu Komfort" class="w-full h-64 object-cover">
+                        <div class="p-8 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Domek Komfort (4-6 osobowy)</h3>
+                                <p class="text-slate-600 mb-6">Przestronny, piętrowy domek z dwoma oddzielnymi sypialniami na górze, salonem z aneksem kuchennym, łazienką oraz prywatnym tarasem z grillem.</p>
+                                <ul class="space-y-2 mb-8 text-slate-700" aria-label="Wyposażenie domku Komfort">
+                                    <li class="flex items-center"><span class="text-emerald-500 mr-2" aria-hidden="true">✔</span> TV i bezpłatne Wi-Fi</li>
+                                    <li class="flex items-center"><span class="text-emerald-500 mr-2" aria-hidden="true">✔</span> Kompleksowo wyposażona kuchnia</li>
+                                    <li class="flex items-center"><span class="text-emerald-500 mr-2" aria-hidden="true">✔</span> Taras z meblami ogrodowymi</li>
+                                </ul>
+                            </div>
+                            <a href="#kontakt" class="block text-center bg-lazur-600 hover:bg-lazur-700 text-white font-semibold py-3 px-6 rounded-xl transition-all">Zapytaj o dostępność</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Nowoczesne wnętrze domku parterowego typu Standard" class="w-full h-64 object-cover">
+                        <div class="p-8 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Domek Standard (4-osobowy)</h3>
+                                <p class="text-slate-600 mb-6">Przytulny domek parterowy, idealny dla rodziców z młodszymi dziećmi. Brak schodów gwarantuje pełne bezpieczeństwo dla maluchów.</p>
+                                <ul class="space-y-2 mb-8 text-slate-700" aria-label="Wyposażenie domku Standard">
+                                    <li class="flex items-center"><span class="text-emerald-500 mr-2" aria-hidden="true">✔</span> Lodówka, płyta grzewcza, naczynia</li>
+                                    <li class="flex items-center"><span class="text-emerald-500 mr-2" aria-hidden="true">✔</span> Taras ze sprzętem plażowym (parawan, leżaki)</li>
+                                    <li class="flex items-center"><span class="text-emerald-500 mr-2" aria-hidden="true">✔</span> Bezpośrednie wyjście na bezpieczny zieleniec</li>
+                                </ul>
+                            </div>
+                            <a href="#kontakt" class="block text-center bg-lazur-600 hover:bg-lazur-700 text-white font-semibold py-3 px-6 rounded-xl transition-all">Zapytaj o dostępność</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="atrakcje" class="py-20 bg-white" aria-labelledby="atrakcje-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="w-full lg:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80" alt="Dzieci bawiące się radośnie na bezpiecznym placu zabaw" class="rounded-3xl shadow-xl w-full object-cover h-96">
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <span class="text-lazur-600 font-semibold uppercase tracking-wider">Prawdziwy raj dla dzieci</span>
+                        <h2 id="atrakcje-heading" class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mt-2 mb-6">Szczęśliwe dziecko to wypoczęty rodzic</h2>
+                        <p class="text-lg text-slate-600 mb-6">
+                            Wiemy, jak ważne na rodzinnym urlopie są atrakcje dla najmłodszych. W Ośrodku Lazur przygotowaliśmy bezpieczną strefę rozrywki, która odciągnie dzieci od ekranów telefonów na długie godziny.
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-800 font-medium">
+                            <li class="flex items-center"><span class="text-amber-500 text-xl mr-3">★</span> Wielki, atestowany plac zabaw</li>
+                            <li class="flex items-center"><span class="text-amber-500 text-xl mr-3">★</span> Trampoliny i strefa gier</li>
+                            <li class="flex items-center"><span class="text-amber-500 text-xl mr-3">★</span> Bezpieczne gokarty na pedały</li>
+                            <li class="flex items-center"><span class="text-amber-500 text-xl mr-3">★</span> Wakacyjne animacje z profesjonalistami</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="py-20 bg-slate-900 text-white" aria-labelledby="kontakt-heading">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 id="kontakt-heading" class="text-3xl sm:text-4xl font-bold tracking-tight">Zarezerwuj swój rodzinny urlop</h2>
+                    <p class="mt-4 text-lg text-slate-300">Napisz do nas. Odpowiemy w ciągu 24 godzin i pomożemy dobrać idealny domek dla Twojej rodziny.</p>
+                </div>
+
+                <div class="bg-white text-slate-900 p-8 sm:p-10 rounded-3xl shadow-2xl">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="imie" class="block text-sm font-medium text-slate-700 mb-1">Imię i nazwisko</label>
+                                <input type="text" id="imie" name="imie" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-lazur-600 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Adres e-mail</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-lazur-600 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="telefon" class="block text-sm font-medium text-slate-700 mb-1">Numer telefonu</label>
+                                <input type="tel" id="telefon" name="telefon" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-lazur-600 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="termin" class="block text-sm font-medium text-slate-700 mb-1">Interesujący Państwa termin</label>
+                                <input type="text" id="termin" name="termin" placeholder="np. Lipiec 2026" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-lazur-600 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="wiadomosc" class="block text-sm font-medium text-slate-700 mb-1">Wiadomość (opcjonalnie)</label>
+                            <textarea id="wiadomosc" name="wiadomosc" rows="4" placeholder="Liczba osób, wiek dzieci, dodatkowe pytania..." class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-lazur-600 focus:border-transparent"></textarea>
+                        </div>
+
+                        <div class="relative flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="rodo" name="rodo" type="checkbox" required class="focus:ring-lazur-500 h-4 w-4 text-lazur-600 border-slate-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="rodo" class="font-medium text-slate-700">Zgoda na przetwarzanie danych (RODO)</label>
+                                <p class="text-slate-500 text-xs">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Ośrodek Wypoczynkowy Lazur w celu obsługi zapytania rezerwacyjnego. Pełne informacje o ochronie danych znajdziesz w naszej <a href="#polityka" class="text-lazur-600 underline">Polityce Prywatności</a>.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-4 px-6 rounded-xl transition-all text-lg shadow-md">
+                                Wyślij zapytanie o rezerwację
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800" aria-label="Stopka strony">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Ośrodek Lazur Poddąbie</h3>
+                    <p class="text-sm">Od lat tworzymy niezapomniane wspomnienia z wakacji dla rodzin z całej Polski. Zapraszamy do rezerwacji!</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Kontakt</h3>
+                    <p class="text-sm">ul. Słoneczna 12, 76-211 Poddąbie</p>
+                    <p class="text-sm mt-1">Tel: +48 123 456 789</p>
+                    <p class="text-sm mt-1">E-mail: kontakt@lazur-poddabie.pl</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Informacje prawne</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><a id="polityka" href="#" class="hover:text-white underline">Polityka Prywatności i RODO</a></li>
+                        <li><a href="#" class="hover:text-white underline">Deklaracja Dostępności (WCAG)</a></li>
+                        <li><a href="#" class="hover:text-white underline">Regulamin Ośrodka</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-xs">
+                <p>&copy; 2026 Ośrodek Wypoczynkowy Lazur Poddąbie. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-slate-900 text-white p-4 border-t border-slate-700 shadow-xl z-50 flex flex-col sm:flex-row items-center justify-between gap-4" role="dialog" aria-live="polite" aria-label="Informacja o plikach cookies">
+        <div class="text-sm max-w-4xl">
+            <p>Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Więcej informacji znajdziesz w naszej <a href="#" class="underline text-lazur-400">Polityce Prywatności</a>.</p>
+        </div>
+        <div class="flex-shrink-0">
+            <button id="accept-cookies" class="bg-lazur-600 hover:bg-lazur-500 text-white font-semibold px-5 py-2 rounded-lg text-sm transition-colors">
+                Akceptuję wszystkie
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const banner = document.getElementById('cookie-banner');
+        const button = document.getElementById('accept-cookies');
+        
+        button.addEventListener('click', () => {
+            banner.style.display = 'none';
+            // Tutaj można dodać zapis do localStorage, aby baner nie pojawiał się przy kolejnej wizycie:
+            // localStorage.setItem('cookiesAccepted', 'true');
+        });
+    </script>
+</body>
+</html>

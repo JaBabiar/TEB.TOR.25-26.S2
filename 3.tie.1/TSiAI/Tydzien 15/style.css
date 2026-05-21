@@ -1,0 +1,37 @@
+/* 
+Kartkówka do nauki 26.05.2026
+
+*/
+*{
+    box-sizing: border-box;
+}
+section{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+}
+div{
+    min-width: 200px;
+    height: 200px;
+    background: red;
+    padding: 20px;
+    border-radius: 80px;
+    flex: 1;
+}
+/* Style aplikują się tylko na telefon*/
+@media screen and (max-width: 670px) {
+    section{
+        flex-direction: column;
+    }
+}
+/* Style aplikują się tylko na tablet*/
+@media screen and (max-width: 1024px){
+    div{
+        background: blue;
+        width: 50%;
+    }
+    section{
+        flex-wrap: wrap;
+    }
+}
