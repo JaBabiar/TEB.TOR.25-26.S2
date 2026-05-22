@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <main>
+        <section id="chat">
+            <div class="message jolanta">
+                <img src="Jolka.jpg" alt="Jolanta Nowak">
+                <p>Cześć idziesz jutro do kina?</p>
+            </div>
+            <div class="message krzysztof">
+                <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+                <p>Tak! A ty?</p>
+            </div>
+        </section>
+        <section class="inputArea">
+            <form onsubmit="(e) => e.preventDefault()">
+                <label for="messageInput">Wpisz wiadomość:</label>
+                <input type="text" id="messageInput">
+                <button type="button" onclick="sendMessage()">Wyślij</button>
+                <br>
+                <button type="button" onclick="generateRandomReply()">Generuj losową odpowiedź</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
+
+<script src="./app.js"></script>
