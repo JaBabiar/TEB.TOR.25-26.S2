@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+article{
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 10px #00000067;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    article{
+        background: #f4f4f4;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    h3{
+        font-size: 120%;
+    }
+}
+
+@media print{
+    article{
+        border: none;
+        box-shadow: none;
+    }
+}
