@@ -19,6 +19,7 @@ function sendMessage(){
 }
 
 function generateRandomReply(){
+
     const randomNumber = Math.floor(Math.random() * replies.length);
     chat.innerHTML += `<div class='message krzysztof'> 
     <img src='Krzysiek.jpg' alt='Krzysztof Łukasiński'> <p>

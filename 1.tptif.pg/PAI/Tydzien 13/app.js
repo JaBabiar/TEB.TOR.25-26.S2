@@ -10,3 +10,5 @@ karty.forEach(karta => {
         console.log(karta)
     })
 });
+
+
