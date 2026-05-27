@@ -1,0 +1,128 @@
+---
+title: "01 - Zaawansowane Wejście/Wyjście i Struktury Danych"
+description: "Rozszerzone typy danych, listy, słowniki oraz zaawansowane techniki konsolowe w Pythonie."
+---
+
+import Callout from '../../components/Callout.astro';
+
+# 1. Zaawansowane Wejście/Wyjście i Złożone Typy Danych
+
+Aplikacja konsolowa to nie tylko proste pobieranie jednej liczby i jej wypisywanie. Często na egzaminie INF.04 musisz obsłużyć całe ciągi danych, generować raporty lub przetwarzać parametry konfiguracyjne. W tym rozdziale od razu wchodzimy na wyższy poziom: łączymy podstawowe wejście/wyjście z listami, słownikami i zaawansowanym formatowaniem.
+
+## 1.1. Zmienne, Typy i Adnotacje (Type Hinting)
+
+Python jest językiem dynamicznie typowanym, co oznacza, że sam domyśla się typu zmiennej. Jednak dobrą, profesjonalną praktyką (szczególnie w większych aplikacjach) jest stosowanie **adnotacji typów**. Zwiększa to czytelność kodu i ułatwia wyłapywanie błędów.
+
+```python
+# Standardowa deklaracja (poprawna)
+wiek = 18
+imie = "Jan"
+
+# Deklaracja z adnotacją typów
+punkty: int = 85
+srednia: float = 4.75
+czy_zdal: bool = True
+nazwisko: str = "Kowalski"
+
+```
+
+## 1.2. Złożone Struktury Danych: Listy i Słowniki
+
+Pojedyncze zmienne to za mało, by obsłużyć system oceniania lub bazę pracowników. Do tego służą kolekcje.
+
+### Listy (`list`)
+
+Lista to uporządkowany zbiór elementów. Możesz ją modyfikować, sortować i iterować po niej.
+
+```python
+# Inicjalizacja i podstawowe metody
+oceny: list = [4, 5, 3, 4, 5]
+
+oceny.append(2)           # Dodaje element na koniec
+oceny.insert(0, 5)        # Wstawia 5 na indeks 0 (początek)
+oceny.sort(reverse=True)  # Sortuje malejąco
+
+# Zaawansowane: List Comprehension (Krótka notacja generowania list)
+# Tworzy listę kwadratów liczb od 1 do 5
+kwadraty = [x**2 for x in range(1, 6)] 
+# Wynik: [1, 4, 9, 16, 25]
+
+```
+
+### Słowniki (`dict`)
+
+Słownik przechowuje dane w parach **klucz-wartość**. Jest niezastąpiony przy tworzeniu obiektopodobnych struktur lub przechowywaniu powiązanych ze sobą informacji.
+
+```python
+uczen: dict = {
+    "imie": "Jan",
+    "nazwisko": "Kowalski",
+    "wiek": 19,
+    "oceny": [5, 4, 4, 5] # Lista jako wartość w słowniku!
+}
+
+# Pobieranie wartości
+print(uczen["imie"])
+
+# Bezpieczne pobieranie (zapobiega błędowi, gdy klucz nie istnieje)
+pesel = uczen.get("pesel", "Brak danych")
+
+# Iteracja po słowniku (często punktowana na egzaminie)
+for klucz, wartosc in uczen.items():
+    print(f"{klucz.capitalize()}: {wartosc}")
+
+```
+
+## 1.3. Zaawansowana Interakcja z Konsolą (Pobieranie Danych)
+
+Oprócz standardowego `int(input("Podaj x: "))`, w arkuszach mogą pojawić się zadania wymagające szybkiego wprowadzenia wielu danych w jednej linii.
+
+**Pobieranie wielu wartości naraz:**
+Używamy tutaj metod `.split()` (dzieli tekst na listę według spacji) oraz funkcji `map()` (aplikuje funkcję, np. `int`, do każdego elementu).
+
+```python
+# Użytkownik wpisuje w konsoli: 10 20
+a, b = map(int, input("Podaj dwie liczby oddzielone spacją: ").split())
+print(f"Suma: {a + b}")
+
+# Pobieranie nieznanej liczby elementów do listy w jednej linii
+# Użytkownik wpisuje: 5 4 3 5 4
+dane_tekstowe = input("Wpisz oceny po spacji: ").split()
+oceny = [int(x) for x in dane_tekstowe] # Konwersja każdego elementu na int
+
+```
+
+## 1.4. Formatowanie Wyjścia na Poziomie Master
+
+Egzaminatorzy zwracają uwagę na to, czy aplikacja jest estetyczna. Standardowa funkcja `print()` przyjmuje ukryte argumenty `sep` (separator) oraz `end` (zakończenie linii).
+
+```python
+# Zamiast nowej linii, wypisuje wszystko w jednym wierszu oddzielone myślnikiem
+print("A", "B", "C", sep=" - ", end=" | Koniec\n")
+# Wynik: A - B - C | Koniec
+
+```
+
+**Zaawansowane f-stringi:**
+F-stringi pozwalają na potężne formatowanie tekstu wewnątrz klamerek. Jest to absolutny "must-have" do budowania ładnych interfejsów konsolowych i tabel.
+
+```python
+pi = 3.14159265
+kwota = 1250.5
+
+# 1. Zaokrąglanie liczb zmiennoprzecinkowych (.2f to 2 miejsca po przecinku)
+print(f"Wartość PI: {pi:.2f}") 
+# Wynik: Wartość PI: 3.14
+
+# 2. Wyrównywanie tekstu i wypełnianie (idealne do tabelek)
+print(f"|{'ID':<5}|{'Nazwisko':^15}|{'Kwota':>10}|")
+print("-" * 34) # Mnożenie stringa rysuje linię!
+print(f"|{1:<5}|{'Kowalski':^15}|{kwota:>10.2f}|")
+print(f"|{2:<5}|{'Nowak':^15}|{450.0:>10.2f}|")
+
+# Objaśnienie:
+# <5  - wyrównaj do lewej na 5 znaków
+# ^15 - wyśrodkuj na 15 znaków
+# >10 - wyrównaj do prawej na 10 znaków
+
+```

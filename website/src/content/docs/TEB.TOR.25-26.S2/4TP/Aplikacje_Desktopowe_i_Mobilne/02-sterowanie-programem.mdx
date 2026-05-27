@@ -1,0 +1,145 @@
+---
+title: "02 - Sterowanie Przebiegiem Programu"
+description: "Instrukcje warunkowe, pętle oraz zaawansowane operatory logiczne niezbędne do realizacji algorytmów na INF.04."
+---
+
+import Callout from '../../components/Callout.astro';
+
+# 2. Sterowanie Przebiegiem Programu
+
+Sekwencyjne wykonywanie kodu to za mało, aby zaimplementować jakikolwiek algorytm wymagany na egzaminie INF.04. Program musi umieć dynamicznie reagować na dane wejściowe, zapętlać operacje i obsługiwać przypadki brzegowe (tzw. *edge cases*). W Pythonie kluczową rolę odgrywa tutaj odpowiednia **indentacja** (wcięcia), która wymusza czytelną strukturę blokową.
+
+## 2.1. Instrukcje Warunkowe i Dopasowywanie Wzorców
+
+Podstawą decyzyjności jest drzewo `if` - `elif` - `else`. W Pythonie możemy dodatkowo stosować bardzo wygodne, łączone operatory porównania.
+
+```python
+punkty = int(input("Podaj liczbę punktów: "))
+
+# Klasyczne drzewo decyzyjne
+if punkty < 0 or punkty > 100:
+    print("Błąd: Punkty poza zakresem 0-100!")
+elif punkty >= 50:
+    print("Egzamin zdany.")
+else:
+    print("Egzamin niezdany.")
+
+# Zaawansowane łańcuchowanie warunków (Pythonic way)
+# Zamiast: if wiek >= 18 and wiek <= 65:
+wiek = 25
+if 18 <= wiek <= 65:
+    print("Wiek produkcyjny")
+
+```
+
+### Konstrukcja match-case (Odpowiednik Switch)
+
+Od wersji Pythona 3.10 dostępna jest instrukcja `match-case`, która jest idealna do budowy menu konsolowego – bardzo częstego wymogu w arkuszach z aplikacji konsolowych. Eliminuje ona nieczytelne "drabinki" `elif`.
+
+```python
+print("--- MENU ---")
+print("1. Dodaj ucznia")
+print("2. Usuń ucznia")
+print("3. Wyjście")
+
+wybor = input("Wybierz opcję: ")
+
+match wybor:
+    case "1":
+        print("Uruchamiam moduł dodawania...")
+    case "2":
+        print("Uruchamiam moduł usuwania...")
+    case "3":
+        print("Zamykanie programu.")
+    case _:
+        # _ to przypadek domyślny (odpowiednik default)
+        print("Nieprawidłowa opcja! Wybierz 1, 2 lub 3.")
+
+```
+
+## 2.2. Iteracje: Pętle `for` oraz `while`
+
+Wybór pętli zależy od natury problemu. `for` stosujemy przy znanej liczbie iteracji lub przechodzeniu przez kolekcje, natomiast `while` sprawdza się przy nieokreślonej z góry liczbie powtórzeń, zależnej od stanu aplikacji.
+
+### Zaawansowana pętla `for` i generator `range()`
+
+Funkcja `range(start, stop, step)` to najpotężniejsze narzędzie do sterowania pętlą numeryczną w Pythonie. Pamiętaj, że wartość `stop` jest zawsze przedziałem otwartym (nie wlicza się do wyniku).
+
+```python
+# Iteracja od 0 do 4 (włącznie)
+for i in range(5):
+    print(i, end=" ")
+
+# Iteracja w dół: od 10 do 1 (krok -1)
+for i in range(10, 0, -1):
+    print(i, end=" ")
+
+# Przechodzenie przez listę wraz z indeksem (enumerate)
+oceny = [4, 5, 3]
+for indeks, ocena in enumerate(oceny):
+    print(f"Ocena nr {indeks + 1}: {ocena}")
+
+```
+
+### Sterowanie pętlą: `break` i `continue`
+
+* `break` – natychmiast przerywa działanie całej pętli.
+* `continue` – pomija resztę aktualnego kroku i przechodzi do następnej iteracji.
+
+```python
+# Omijanie liczb parzystych w przetwarzaniu
+for liczba in range(1, 10):
+    if liczba % 2 == 0:
+        continue # Przeskocz do kolejnej liczby
+    print(f"Przetwarzam liczbę nieparzystą: {liczba}")
+
+```
+
+## 2.3. Symulacja Pętli `do-while`
+
+Języki takie jak C++ czy C# posiadają konstrukcję `do-while`, która gwarantuje, że kod wykona się *przynajmniej raz* przed sprawdzeniem warunku. Python nie posiada tej konstrukcji, co może sprawiać problem w zadaniach wymagających logiki: *"Wykonaj obliczenia, a następnie zapytaj, czy chcesz powtórzyć program"*.
+
+Rozwiązaniem jest zastosowanie pętli nieskończonej `while True` z wyjściem w środku bloku.
+
+```python
+while True:
+    # 1. Główna logika programu (wykona się co najmniej raz)
+    a = float(input("Podaj pierwszą liczbę: "))
+    b = float(input("Podaj drugą liczbę: "))
+    print(f"Wynik dodawania: {a + b}")
+    
+    # 2. Pytanie o kontynuację
+    decyzja = input("Czy chcesz wykonać kolejne działanie? (t/n): ").strip().lower()
+    
+    # 3. Warunek wyjścia
+    if decyzja != 't':
+        print("Zamykanie programu...")
+        break
+
+```
+
+## 2.4. Ewaluacja Wartości (Truthy i Falsy)
+
+W Pythonie każda zmienna może być potraktowana jako wartość logiczna. Kod jest znacznie czystszy, jeśli wykorzystamy ten mechanizm zamiast jawnego porównywania do zera czy pustego stringa.
+
+Wartości, które w warunku `if` zwrócą **False** (tzw. Falsy):
+
+* Liczba zero (`0`, `0.0`)
+* Pusty string (`""`)
+* Pusta kolekcja (`[]`, `{}`)
+* Wartość `None`
+
+```python
+uzytkownik = input("Podaj imię: ")
+
+# Zamiast pisać: if uzytkownik == "":
+if not uzytkownik:
+    print("Błąd: Imię nie może być puste!")
+
+# Sprawdzanie, czy lista nie jest pusta:
+dane = []
+if not dane:
+    print("Baza danych jest pusta. Załaduj plik wejściowy.")
+
+```
+
