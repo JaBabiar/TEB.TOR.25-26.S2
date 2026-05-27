@@ -91,3 +91,4 @@ Odpowiada tylko: **Prawda (`true`)** albo **Fałsz (`false`)**.
 - **Łączenie warunków:**
     - `&&` (ORAZ) – Oba warunki muszą być spełnione.
     - `||` (LUB) – Wystarczy, że jeden warunek jest spełniony.
+    
