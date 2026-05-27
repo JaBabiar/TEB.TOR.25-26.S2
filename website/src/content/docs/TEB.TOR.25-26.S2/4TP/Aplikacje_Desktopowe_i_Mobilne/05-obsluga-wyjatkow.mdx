@@ -1,0 +1,114 @@
+---
+title: "05 - Odporność Aplikacji: Obsługa Wyjątków"
+description: "Zabezpieczanie programu przed błędami użytkownika i zapobieganie awariom konsoli za pomocą bloków try-except."
+---
+
+import Callout from '../../components/Callout.astro';
+
+# 5. Odporność Aplikacji: Obsługa Wyjątków
+
+Aplikacja, która wyłącza się z wielkim, czerwonym błędem, gdy użytkownik wpisze literę "A" zamiast liczby "1", na egzaminie INF.04 traci cenne punkty za tzw. "odporność na błędy". Profesjonalny program musi potrafić przewidzieć, że użytkownik zachowa się w sposób nieprzewidywalny, i odpowiednio na to zareagować. W Pythonie służy do tego mechanizm obsługi wyjątków.
+
+
+
+[Image of python try except flowchart]
+
+
+## 5.1. Podstawowy blok `try-except`
+
+Mechanizm działania jest prosty: w bloku `try` umieszczamy kod, który jest "ryzykowny" (np. rzutowanie tekstu na liczbę lub dzielenie), a w bloku `except` piszemy, co ma się stać, jeśli wystąpi błąd. 
+
+Dzięki temu błąd zostaje przechwycony, a program działa dalej, zamiast zaliczyć awarię (tzw. crash).
+
+```python
+tekst = input("Podaj swój wiek: ")
+
+try:
+    # Próbujemy zamienić tekst na liczbę całkowitą
+    wiek = int(tekst)
+    print(f"Twój wiek to: {wiek}")
+except:
+    # Ten kod wykona się TYLKO wtedy, gdy w bloku try wystąpi błąd
+    print("Błąd krytyczny: Wprowadzona wartość nie jest liczbą całkowitą!")
+
+print("Program działa dalej...")
+
+```
+
+## 5.2. Obsługa Konkretnych Wyjątków
+
+W zależności od tego, jaką operację wykonujemy, Python rzuci innym typem błędu. Najczęstsze wyjątki, które musisz znać na INF.04 to:
+
+* `ValueError` – gdy podany typ jest poprawny (np. funkcja przyjmuje string), ale wartość nie ma sensu (np. próba przerobienia słowa "jeden" na `int`).
+* `ZeroDivisionError` – klasyka gatunku, czyli próba dzielenia przez zero.
+
+Możesz obsłużyć kilka wyjątków w jednym bloku:
+
+```python
+try:
+    dzielna = float(input("Podaj dzielną: "))
+    dzielnik = float(input("Podaj dzielnik: "))
+    
+    wynik = dzielna / dzielnik
+    print(f"Wynik dzielenia: {wynik}")
+    
+except ValueError:
+    print("Błąd wprowadzania! Musisz podać wartość liczbową.")
+except ZeroDivisionError:
+    print("Błąd matematyczny! Pamiętaj cholero, nie dziel przez zero!")
+
+```
+
+## 5.3. Rozszerzona struktura: `else` i `finally`
+
+Python oferuje pełną, czteroelementową konstrukcję obsługi wyjątków. Nie używa się jej zawsze, ale w zaawansowanych aplikacjach konsolowych pozwala utrzymać nieskazitelną czystość kodu.
+
+* Blok `else`: Wykona się TYLKO wtedy, gdy w bloku `try` **nie było żadnego błędu**. Idealne miejsce na wypisanie wyniku.
+* Blok `finally`: Wykona się **ZAWSZE**, niezależnie od tego, czy błąd wystąpił, czy nie. Używany najczęściej do zamykania plików lub połączeń sieciowych.
+
+```python
+try:
+    plik_dane = [10, 20, 30]
+    indeks = int(input("Podaj indeks elementu do pobrania (0-2): "))
+    wartosc = plik_dane[indeks]
+except IndexError:
+    print("Błąd: Podany indeks nie istnieje w tablicy!")
+except ValueError:
+    print("Błąd: Indeks musi być liczbą całkowitą!")
+else:
+    # Wykona się tylko, gdy poprawnie pobrano wartość
+    print(f"Pobrano wartość: {wartosc}. Przystępuję do dalszych obliczeń...")
+finally:
+    # Wykona się zawsze na samym końcu
+    print("Operacja odczytu zakończona (czyszczenie pamięci).")
+
+```
+
+## 5.4. Wzorzec Egzaminacyjny: "Kuloodporna" Pętla Walidacyjna
+
+To najważniejszy schemat w tej sekcji. CKE często punktuje aplikację, która potrafi "wymusić" na użytkowniku podanie poprawnej wartości, nie pozwalając mu pójść dalej, dopóki tego nie zrobi.
+
+Osiągamy to, łącząc nieskończoną pętlę `while True` z blokiem `try-except` oraz instrukcją `break`.
+
+```python
+print("--- REJESTRACJA PRACOWNIKA ---")
+
+while True:
+    try:
+        rok_urodzenia = int(input("Podaj rok urodzenia (np. 1995): "))
+        
+        # Opcjonalne dodatkowe sprawdzenie logiczne
+        if rok_urodzenia < 1900 or rok_urodzenia > 2026:
+            print("Błąd: Podano nierealny rok urodzenia. Spróbuj ponownie.")
+            continue # Wraca na początek pętli
+            
+        # Jeśli wszystko poszło dobrze, przerywamy pętlę walidacyjną
+        break 
+        
+    except ValueError:
+        # Złapanie błędu (np. użytkownik wpisał "tysiąc dziewięćset")
+        print("Błąd: Musisz użyć cyfr! Spróbuj ponownie.\n")
+
+print(f"Sukces! Zarejestrowano pracownika z rocznika {rok_urodzenia}.")
+
+```

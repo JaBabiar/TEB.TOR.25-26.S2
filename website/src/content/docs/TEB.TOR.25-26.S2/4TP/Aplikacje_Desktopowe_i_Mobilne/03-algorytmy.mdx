@@ -1,0 +1,142 @@
+---
+title: "03 - Struktury Danych i Algorytmy Egzaminacyjne"
+description: "Tablice, macierze oraz absolutna klasyka algorytmów wymaganych na egzaminie zawodowym INF.04."
+---
+
+import Callout from '../../components/Callout.astro';
+
+# 3. Struktury Danych i Algorytmy Egzaminacyjne
+
+Na egzaminie INF.04 rzadko operuje się na pojedynczych zmiennych. Zazwyczaj musisz wczytać serię danych do tablicy, a następnie poddać ją obróbce algorytmicznej. Chociaż Python posiada potężne wbudowane funkcje (jak `min()`, `max()` czy `sort()`), egzaminatorzy często wymagają **samodzielnego napisania algorytmu** od zera. 
+
+## 3.1. Tablice (Listy) Jedno- i Dwuwymiarowe
+
+W Pythonie rolę tablic pełnią listy. W arkuszach często pojawia się wymóg zainicjalizowania tablicy o z góry określonym rozmiarze (np. 100 elementów wypełnionych zerami).
+
+### Tablice jednowymiarowe
+```python
+# Inicjalizacja pustej listy i dodawanie elementów (dynamicznie)
+tablica = []
+for i in range(5):
+    tablica.append(int(input(f"Podaj element {i+1}: ")))
+
+# Szybka inicjalizacja tablicy o stałym rozmiarze (np. 10 elementów)
+tablica_stala = [0] * 10
+
+```
+
+### Tablice dwuwymiarowe (Macierze)
+
+Aplikacje takie jak gry konsolowe (np. kółko i krzyżyk) czy systemy rezerwacji miejsc opierają się na tablicach 2D. W Pythonie jest to po prostu lista zawierająca inne listy.
+
+```python
+wiersze = 3
+kolumny = 4
+
+# POPRAWNA inicjalizacja macierzy 3x4 wypełnionej zerami
+macierz = [[0 for _ in range(kolumny)] for _ in range(wiersze)]
+
+# Wypisywanie macierzy w formie czytelnej tabeli
+for wiersz in macierz:
+    for komorka in wiersz:
+        print(f"{komorka:^3}", end="") # ^3 wyśrodkowuje na 3 znakach
+    print() # Złamanie linii po każdym wierszu
+
+```
+
+## 3.2. Klasyka Algorytmiczna CKE
+
+Poniższe algorytmy to absolutne minimum, które musisz potrafić napisać o 3:00 w nocy.
+
+### Szukanie wartości najmniejszej i największej (Min/Max)
+
+Nie używaj wbudowanych funkcji, jeśli polecenie brzmi "napisz algorytm wyszukujący".
+
+```python
+dane = [45, 12, 89, 23, 7, 99, 34]
+
+# Zawsze inicjalizuj zmienne min/max PIERWSZYM elementem tablicy!
+max_wartosc = dane[0]
+min_wartosc = dane[0]
+
+for liczba in dane:
+    if liczba > max_wartosc:
+        max_wartosc = liczba
+    if liczba < min_wartosc:
+        min_wartosc = liczba
+
+print(f"Najmniejsza: {min_wartosc}, Największa: {max_wartosc}")
+
+```
+
+### Sumowanie i zliczanie z warunkiem
+
+Częste zadanie: "Oblicz średnią tylko z liczb parzystych znajdujących się w tablicy".
+
+```python
+dane = [1, 4, 7, 10, 15, 20]
+suma_parzystych = 0
+ilosc_parzystych = 0
+
+for liczba in dane:
+    if liczba % 2 == 0:  # Reszta z dzielenia przez 2 równa 0 (liczba parzysta)
+        suma_parzystych += liczba
+        ilosc_parzystych += 1
+
+if ilosc_parzystych > 0:
+    srednia = suma_parzystych / ilosc_parzystych
+    print(f"Średnia liczb parzystych: {srednia:.2f}")
+else:
+    print("Brak liczb parzystych w tablicy.")
+
+```
+
+## 3.3. Sortowanie Bąbelkowe (Bubble Sort)
+
+Niemal każdy egzamin z kwalifikacji INF.04, w którym nie używa się bazy danych, zmusza do posortowania jakichś elementów. Sortowanie bąbelkowe jest najprostsze do zapamiętania i zaimplementowania.
+
+Polega na przechodzeniu przez tablicę i zamianie miejscami sąsiadujących elementów, jeśli są w złej kolejności.
+
+```python
+tablica = [64, 34, 25, 12, 22, 11, 90]
+n = len(tablica)
+
+# Algorytm sortowania bąbelkowego (rosnąco)
+for i in range(n):
+    # Ostatnie i elementów jest już na swoim miejscu, nie musimy ich sprawdzać
+    for j in range(0, n - i - 1):
+        if tablica[j] > tablica[j + 1]:
+            # Python pozwala na zamianę zmiennych w jednej linii!
+            # Odpada konieczność tworzenia zmiennej pomocniczej (temp)
+            tablica[j], tablica[j + 1] = tablica[j + 1], tablica[j]
+
+print("Posortowana tablica:", tablica)
+
+```
+
+## 3.4. Operacje na łańcuchach znaków (Stringach)
+
+Często arkusze wymagają analizy tekstu (np. sprawdzenie, czy hasło spełnia wymagania, lub zliczenie samogłosek). Pamiętaj, że string w Pythonie można traktować jak tablicę znaków.
+
+```python
+haslo = input("Podaj hasło: ")
+
+ma_cyfre = False
+ma_duza_litere = False
+
+# Iteracja znak po znaku
+for znak in haslo:
+    if znak.isdigit():   # Sprawdza czy znak jest cyfrą
+        ma_cyfre = True
+    elif znak.isupper(): # Sprawdza czy znak jest dużą literą
+        ma_duza_litere = True
+
+if len(haslo) >= 8 and ma_cyfre and ma_duza_litere:
+    print("Hasło jest silne.")
+else:
+    print("Hasło jest za słabe!")
+
+# Przydatne triki: Odwracanie stringa (np. do sprawdzania palindromów)
+odwrocone_haslo = haslo[::-1]
+
+```

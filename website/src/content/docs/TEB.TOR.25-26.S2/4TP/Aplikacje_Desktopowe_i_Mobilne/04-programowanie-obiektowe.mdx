@@ -1,0 +1,136 @@
+---
+title: "04 - Programowanie Obiektowe (OOP)"
+description: "Klasy, obiekty, hermetyzacja oraz metody dostępowe w Pythonie pod kątem wymagań egzaminu INF.04."
+---
+
+import Callout from '../../components/Callout.astro';
+
+# 4. Programowanie Obiektowe (OOP)
+
+Programowanie obiektowe (Object-Oriented Programming) to absolutne serce egzaminu INF.04. Arkusze egzaminacyjne w sekcji praktycznej niemal zawsze wymagają zaprojektowania klasy według ściśle określonej specyfikacji, utworzenia jej obiektów oraz zaimplementowania odpowiednich metod operujących na wewnętrznym stanie obiektu.
+
+
+
+## 4.1. Klasy a Obiekty: Podstawowa Architektura
+
+Klasa to szablon (przepis), który definiuje, jakie właściwości (pola) oraz zachowania (metody) będzie posiadał stworzony na jej podstawie obiekt. Obiekt to konkretna instancja (wytwór) tej klasy.
+
+W Pythonie klasę definiujemy słowem kluczowym `class`. Wszystkie metody wewnątrz klasy muszą jako pierwszy argument przyjmować `self` – reprezentuje on konkretny obiekt, na rzecz którego metoda została wywołana.
+
+```python
+class Produkt:
+    # Atrybut klasy (wspólny dla wszystkich obiektów)
+    rodzaj = "Artykuł spożywczy"
+
+    # Metoda klasy
+    def wyswietl_informacje(self):
+        print(f"To jest produkt typu: {self.rodzaj}")
+
+# Tworzenie obiektu (instancji klasy)
+mleko = Produkt()
+mleko.wyswietl_informacje()
+
+```
+
+## 4.2. Konstruktor (`__init__`) i Inicjalizacja Stanu
+
+Konstruktor to specjalna metoda wywoływana automatycznie w momencie tworzenia nowego obiektu. Służy do inicjalizacji pól (atrybutów) obiektu wartościami początkowymi. W Pythonie konstruktorem jest metoda magiczna `__init__`.
+
+CKE bardzo często wymaga, aby pola były inicjalizowane wartościami przekazanymi w parametrach konstruktora, bądź posiadały wartości domyślne.
+
+```python
+class Uczen:
+    # Konstruktor z parametrami i wartościami domyślnymi
+    def __init__(self, imie: str, nazwisko: str, klasa: str = "1P"):
+        self.imie = imie          # Atrybut instancji
+        self.nazwisko = nazwisko  # Atrybut instancji
+        self.klasa = klasa        # Atrybut instancji z wartością domyślną
+
+# Tworzenie obiektów przy użyciu konstruktora
+uczen1 = Uczen("Jan", "Kowalski")            # Klasa przyjmie wartość domyślną "1P"
+uczen2 = Uczen("Anna", "Nowak", "4P")        # Nadpisanie wartości domyślnej
+
+```
+
+## 4.3. Hermetyzacja i Modyfikatory Dostępu w Pythonie
+
+Hermetyzacja (enkapsulacja) polega na ukrywaniu wewnętrznych danych klasy przed bezpośrednim dostępem z zewnątrz i udostępnianiu ich wyłącznie przez dedykowane metody.
+
+W językach takich jak C++ czy C# istnieją ścisłe słowa kluczowe (`private`, `public`, `protected`). Python realizuje to inaczej – za pomocą odpowiedniego nazewnictwa (konwencji):
+
+* **Brak przedrostka** (np. `self.nazwa`) -> Atrybut publiczny (**public**). Dostępny z każdego miejsca.
+* **Pojedynczy podkreślnik** (np. `self._cena`) -> Atrybut chroniony (**protected**). Sygnał dla programisty, że pole powinno być używane tylko wewnątrz klasy i klas pochodnych.
+* **Podwójny podkreślnik** (np. `self.__pesel`) -> Atrybut prywatny (**private**). Python uruchamia mechanizm *name mangling* (modyfikacja nazwy), przez co bezpośredni dostęp z zewnątrz za pomocą `.____pesel` rzuci błąd `AttributeError`.
+
+```python
+class KontoBankowe:
+    def __init__(self, wlasciciel: str, stan_poczatkowy: float):
+        self.wlasciciel = wlasciciel   # Publiczne
+        self.__saldo = stan_poczatkowy # Prywatne (ukryte)
+
+    def wyswietl_stan(self):
+        # Wewnątrz klasy mamy pełny dostęp do pól prywatnych
+        print(f"Konto: {self.wlasciciel}, Saldo: {self.__saldo} zł")
+
+konto = KontoBankowe("Jan Kowalski", 2500.0)
+konto.wyswietl_stan()
+
+# Próba bezpośredniego dostępu zakończy się błędem:
+# print(konto.__saldo) # AttributeError!
+
+```
+
+## 4.4. Metody Dostępowe: Gettery, Setters i `@property`
+
+Skoro pola są prywatne, musimy dać możliwość bezpiecznego odczytu i modyfikacji ich wartości z zewnątrz za pomocą metod dostępowych. W Pythonie można to zrealizować na dwa sposoby: klasyczny (wzorowany na C++/Java) oraz nowoczesny (pythonowy) za pomocą dekoratorów.
+
+### Sposób klasyczny (Metody get/set)
+
+```python
+class Pracownik:
+    def __init__(self, pensja: float):
+        self.__pensja = pensja
+
+    # Getter
+    def get_pensja(self) -> float:
+        return self.__pensja
+
+    # Setter z walidacją danych
+    def set_pensja(self, nowa_pensja: float):
+        if nowa_pensja > 0:
+            self.__pensja = nowa_pensja
+        else:
+            print("Błąd: Pensja musi być większa od 0!")
+
+```
+
+### Sposób nowoczesny (Dekorator `@property`)
+
+Pozwala na traktowanie metod dostępowych tak, jakby były zwykłymi polami (atrybutami), przy jednoczesnym zachowaniu pełnej kontroli i walidacji. Jest to podejście wysoce rekomendowane w czystym kodzie Pythona.
+
+```python
+class Prostokat:
+    def __init__(self, szerokosc: float, wysokosc: float):
+        self.__szerokosc = szerokosc
+        self.__wysokosc = wysokosc
+
+    @property
+    def szerokosc(self) -> float:
+        """Getter dla pola szerokosc"""
+        return self.__szerokosc
+
+    @szerokosc.setter
+    def szerokosc(self, wartosc: float):
+        """Setter dla pola szerokosc z warunkiem brzegowym"""
+        if wartosc > 0:
+            self.__szerokosc = wartosc
+        else:
+            print("Błąd: Szerokość musi być liczbą dodatnią!")
+
+# Użycie dekoratora w praktyce
+p = Prostokat(10, 5)
+print(p.szerokosc)   # Wywołuje getter bez używania nawiasów () -> Wynik: 10
+p.szerokosc = 15     # Wywołuje setter automatycznie -> Wartość zmieniona
+p.szerokosc = -5     # Wywołuje setter -> Komunikat o błędzie, wartość pozostaje bez zmian
+
+```
