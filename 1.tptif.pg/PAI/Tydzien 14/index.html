@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #blok{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px 0 10px 10px;
+            transform: scale(1.1);
+        }
+        #tip{
+            position: absolute;
+            top: 0;
+            left: 100%;
+
+            width: max-content;
+            background-color: red;
+            border-radius: 0 10px 10px 0;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="blok">
+        <div id="tip">tu działa ale nie działa</div>
+    </div>
 </body>
 </html>
 

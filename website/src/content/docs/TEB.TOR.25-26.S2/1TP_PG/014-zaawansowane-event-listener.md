@@ -16,3 +16,16 @@ przycisk.addEventListener("click", function(e){
     
 })
 ```
+
+## Najważniejsze Zdarzenia 
+
+**Myszy** 
+
+- `click` - Po kliknięciu
+- `dblclick` - Podwójne kliknięcie
+- `mousover` - Po najechaniu myszką na obszar
+- `mouseout` - po wyjechaniu myszką poza obszar
+**Klawiatury**
+
+**Okna**
+
