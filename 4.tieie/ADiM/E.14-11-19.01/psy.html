@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria zdjęć</title>
+    <link rel="stylesheet" href="styl5.css">
+</head>
+<body>
+    <header>
+        <h1>Zdjęcia psów</h1>
+    </header>
+    <main>
+        <aside>
+            <h2>Kategorie</h2>
+            <ul>
+                <li><a href="./psy.html">Psy</a></li>
+                <li><a href="./koty.html">Koty</a></li>
+                <li>Gryzonie</li>
+                <li>Jaszczurki</li>
+                <li>Inne zdjęcia</li>
+            </ul>
+            <h4><a href="./index.html">Powrót do strony głównej</a></h4>
+        </aside>
+        <section>
+            <section>
+                <h1>Wybierz zdjęcie</h1>
+                <img src="./pies1.jpg" 
+                    alt="pes1" 
+                    onclick="klikObraz(this)" 
+                    onmouseenter="zamienSzary(this)" 
+                    onmouseleave="wrocSzary(this)"
+                    >
+                <img src="./ps2.jpg" 
+                    alt="ps2"
+                    onclick="klikObraz(this)" 
+                    onmouseenter="zamienSzary(this)" 
+                    onmouseleave="wrocSzary(this)">
+                <img src="./ps3.jpg" 
+                    alt="ps3"
+                    onclick="klikObraz(this)" 
+                    onmouseenter="zamienSzary(this)" 
+                    onmouseleave="wrocSzary(this)">
+            </section>
+            <section>
+                <p><img src="/ps1.jpg" alt="pies-duzy" id="duzyObraz"></p>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Galerię zdjęć opracował: 06213564031</p>
+    </footer>
+</body>
+</html>
+
+<script>
+
+function zamienSzary(tenElement){
+    tenElement.attributes.src.value = tenElement.alt + "-szary.jpg"
+}
+
+function wrocSzary(tenElement){
+    tenElement.attributes.src.value = tenElement.alt + ".jpg"
+}
+
+function klikObraz(tenElement){
+    document.getElementById("duzyObraz").attributes.src.value = tenElement.alt + ".jpg"
+}
+</script>
