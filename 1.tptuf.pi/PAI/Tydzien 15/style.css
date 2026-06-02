@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+
+header{
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    background-color: #cfecfc;
+}
+
+main{
+display: flex;
+}
+
+aside{
+width: 20%;
+height: 500px;
+background-color: #cfecfc;
+}
+aside ol{
+    height: auto;
+    overflow: auto;
+    max-width: max-content;
+}
+section{
+width: 80%;
+height: 500px;
+background-color: #F9FDFF;
+}
+
+footer{
+width: 100%;
+background-color: #F67376;
+height: 50px;
+}
+
+
+h1{
+    margin-top: 0;
+}
+button{
+    background-color: #F3CB47;
+}
