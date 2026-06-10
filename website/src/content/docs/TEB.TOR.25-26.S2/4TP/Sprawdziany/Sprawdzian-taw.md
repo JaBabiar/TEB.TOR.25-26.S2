@@ -39,10 +39,7 @@ Lista rozwijalna „Gatunek” musi definiować dokładnie 5 opcji wyboru (znacz
 - Po kliknięciu przycisku **„Zapisz”** generowane jest zdarzenie, które pobiera dane z formularza.
 - Aplikacja **nie może przeładowywać strony** przy zatwierdzaniu formularza (należy zablokować domyślną akcję `submit`).
 - Dane pobrane z formularza muszą zostać wypisane w konsoli przeglądarki dokładnie w następującym formacie tekstowym:
-  ```text
-  tytul: [wartość_pola_tytuł]; gatunek: [wartość_pola_gatunek]
-
-```
+  `tytul: [wartość_pola_tytuł]; gatunek: [wartość_pola_gatunek]`
 
 *(Gdzie w miejscu nawiasów kwadratowych mają znaleźć się rzeczywiste dane wprowadzone lub wybrane przez użytkownika, np. `tytul: Gothic; gatunek: 2`)*.
 
