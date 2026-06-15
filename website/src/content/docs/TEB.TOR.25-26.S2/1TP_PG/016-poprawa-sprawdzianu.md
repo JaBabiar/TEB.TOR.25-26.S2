@@ -1,7 +1,8 @@
 ---
 
-itle: "Sprawdzian Praktyczny INF.03 - Front-End (Grupa A)"
+title: "Sprawdzian Praktyczny INF.03 - Front-End (Grupa A)"
 course: "TEB.TOR.25-26"
+layout: ../layouts/ExamLayout.astro
 
 ---
 # Zadanie Egzaminacyjne: Aplikacja "Kalkulator Wsparcia IT"
